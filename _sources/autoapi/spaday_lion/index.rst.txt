@@ -1,0 +1,21 @@
+spaday_lion
+===========
+
+.. py:module:: spaday_lion
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   spaday_lion.__version__
+
+
+Package Contents
+----------------
+
+.. py:data:: __version__
+   :value: '0.1.0'
+
+
