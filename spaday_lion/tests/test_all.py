@@ -7,7 +7,6 @@ from spaday.bootstrap import bootstrap
 from spaday_lion import TOKENS, LionButton, LionInput, package
 
 ROOT = Path(__file__).parent.parent
-DEFINES = ROOT.parent / "js" / "node_modules" / "@lion" / "ui" / "exports" / "define"
 
 
 def test_generated_components_serialize():
@@ -21,8 +20,9 @@ def test_catalog_is_the_elements_lion_registers():
     assert {"lion-button", "lion-input", "lion-select-rich", "lion-input-range"} <= tags
     # the manifest's test fixtures and Storybook helpers are not Lion elements
     assert not {"choice-input-foo", "sb-action-logger", "lion-field-with-select"} & tags
-    if DEFINES.exists():  # the installed package, when the JS side has been set up
-        assert tags == {path.stem for path in DEFINES.glob("*.js")}
+    # exactly the elements the served define modules register
+    defines = package.assets_dir / "vendor" / "@lion" / "ui" / "exports" / "define"
+    assert tags == {path.stem for path in defines.glob("*.js")}
 
 
 def test_inherited_attributes_reach_the_catalog():
