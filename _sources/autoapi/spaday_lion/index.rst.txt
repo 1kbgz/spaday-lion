@@ -11,6 +11,7 @@ Submodules
    :maxdepth: 1
 
    /autoapi/spaday_lion/components/index
+   /autoapi/spaday_lion/example/index
 
 
 Attributes

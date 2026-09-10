@@ -1,0 +1,39 @@
+test_example
+============
+
+.. py:module:: test_example
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   test_example.request
+   test_example.run_ticks
+   test_example.test_example_serves_the_onboarding_page
+   test_example.test_reviews_advance_and_applications_arrive
+   test_example.test_applying_queues_the_application
+   test_example.test_approving_counts_the_account_once
+
+
+Module Contents
+---------------
+
+.. py:function:: request(method: str, path: str, **kwargs)
+   :async:
+
+
+.. py:function:: run_ticks(monkeypatch, ticks: int)
+
+   Run the review loop for ``ticks`` iterations.
+
+
+.. py:function:: test_example_serves_the_onboarding_page()
+
+.. py:function:: test_reviews_advance_and_applications_arrive(monkeypatch)
+
+.. py:function:: test_applying_queues_the_application()
+
+.. py:function:: test_approving_counts_the_account_once()
+

@@ -1,0 +1,314 @@
+spaday_lion.example
+===================
+
+.. py:module:: spaday_lion.example
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   spaday_lion.example.logger
+   spaday_lion.example.PLANS
+   spaday_lion.example.COUNTRIES
+   spaday_lion.example.ARRIVING
+   spaday_lion.example.feed
+   spaday_lion.example.session
+   spaday_lion.example.server
+   spaday_lion.example.stats
+   spaday_lion.example.apply_form
+   spaday_lion.example.queue
+   spaday_lion.example.FAQ
+   spaday_lion.example.help_panel
+   spaday_lion.example.confirm
+   spaday_lion.example.page
+   spaday_lion.example.styles
+   spaday_lion.example.app
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   spaday_lion.example.OnboardingFeed
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   spaday_lion.example.application
+   spaday_lion.example.refresh_totals
+   spaday_lion.example.next_number
+   spaday_lion.example.add_application
+   spaday_lion.example.review_applications
+   spaday_lion.example.apply
+   spaday_lion.example.approve
+   spaday_lion.example.stat
+
+
+Module Contents
+---------------
+
+.. py:data:: logger
+
+.. py:data:: PLANS
+
+.. py:data:: COUNTRIES
+   :value: ['Netherlands', 'Germany', 'France', 'Belgium', 'Spain']
+
+
+.. py:data:: ARRIVING
+   :value: [('Sanne de Vries', 'plus', 2500), ('Lukas Becker', 'basic', 400), ('Camille Martin', 'premium',...
+
+
+.. py:function:: application(number: int, name: str, plan: str, deposit: float, progress: int = 0, status: str = 'In review') -> dict
+
+.. py:class:: OnboardingFeed(/, **data: Any)
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   !!! abstract "Usage Documentation"
+       [Models](../concepts/models.md)
+
+   A base class for creating Pydantic models.
+
+   .. attribute:: __class_vars__
+
+      The names of the class variables defined on the model.
+
+   .. attribute:: __private_attributes__
+
+      Metadata about the private attributes of the model.
+
+   .. attribute:: __signature__
+
+      The synthesized `__init__` [`Signature`][inspect.Signature] of the model.
+
+   .. attribute:: __pydantic_complete__
+
+      Whether model building is completed, or if there are still undefined fields.
+
+   .. attribute:: __pydantic_core_schema__
+
+      The core schema of the model.
+
+   .. attribute:: __pydantic_custom_init__
+
+      Whether the model has a custom `__init__` function.
+
+   .. attribute:: __pydantic_decorators__
+
+      Metadata containing the decorators defined on the model.
+      This replaces `Model.__validators__` and `Model.__root_validators__` from Pydantic V1.
+
+   .. attribute:: __pydantic_generic_metadata__
+
+      A dictionary containing metadata about generic Pydantic models.
+      The `origin` and `args` items map to the [`__origin__`][genericalias.__origin__]
+      and [`__args__`][genericalias.__args__] attributes of [generic aliases][types-genericalias],
+      and the `parameter` item maps to the `__parameter__` attribute of generic classes.
+
+   .. attribute:: __pydantic_parent_namespace__
+
+      Parent namespace of the model, used for automatic rebuilding of models.
+
+   .. attribute:: __pydantic_post_init__
+
+      The name of the post-init method for the model, if defined.
+
+   .. attribute:: __pydantic_root_model__
+
+      Whether the model is a [`RootModel`][pydantic.root_model.RootModel].
+
+   .. attribute:: __pydantic_serializer__
+
+      The `pydantic-core` `SchemaSerializer` used to dump instances of the model.
+
+   .. attribute:: __pydantic_validator__
+
+      The `pydantic-core` `SchemaValidator` used to validate instances of the model.
+
+   .. attribute:: __pydantic_fields__
+
+      A dictionary of field names and their corresponding [`FieldInfo`][pydantic.fields.FieldInfo] objects.
+
+   .. attribute:: __pydantic_computed_fields__
+
+      A dictionary of computed field names and their corresponding [`ComputedFieldInfo`][pydantic.fields.ComputedFieldInfo] objects.
+
+   .. attribute:: __pydantic_extra__
+
+      A dictionary containing extra values, if [`extra`][pydantic.config.ConfigDict.extra]
+      is set to `'allow'`.
+
+   .. attribute:: __pydantic_fields_set__
+
+      The names of fields explicitly set during instantiation.
+
+   .. attribute:: __pydantic_private__
+
+      Values of private attributes set on the model instance.
+
+   Create a new model by parsing and validating input data from keyword arguments.
+
+   Raises [`ValidationError`][pydantic_core.ValidationError] if the input data cannot be
+   validated to form a valid model.
+
+   `self` is explicitly positional-only to allow `self` as a field name.
+
+
+   .. py:attribute:: applications
+      :type:  list[dict]
+
+
+   .. py:attribute:: opened_today
+      :type:  int
+      :value: 14
+
+
+
+   .. py:attribute:: in_review
+      :type:  int
+      :value: 0
+
+
+
+   .. py:attribute:: capacity
+      :type:  int
+      :value: 0
+
+
+
+.. py:data:: feed
+
+.. py:data:: session
+
+.. py:data:: server
+
+.. py:function:: refresh_totals() -> None
+
+.. py:function:: next_number() -> int
+
+.. py:function:: add_application(row: dict) -> None
+
+   Newest first; past eight rows the oldest approved one drops off.
+
+
+.. py:function:: review_applications() -> None
+   :async:
+
+
+   Checks advance every tick and finish in approval; every third tick an application arrives.
+
+
+.. py:function:: apply(request)
+   :async:
+
+
+.. py:function:: approve(request)
+   :async:
+
+
+.. py:function:: stat(label: str, *body)
+
+.. py:data:: stats
+
+.. py:data:: apply_form
+
+.. py:data:: queue
+
+.. py:data:: FAQ
+   :value: [('How long does a review take?', "Most applications are approved within a minute; the queue...
+
+
+.. py:data:: help_panel
+
+.. py:data:: confirm
+
+.. py:data:: page
+
+.. py:data:: styles
+   :value: Multiline-String
+
+   .. raw:: html
+
+      <details><summary>Show Value</summary>
+
+   .. code-block:: python
+
+      """
+      <style>
+        :root { --surface: var(--spa-surface, #fff); --surface-2: var(--spa-surface-2, #fafafa); --border: var(--spa-border, #e6e6e6);
+          --muted: var(--spa-muted, #666); --accent: var(--spa-accent, #4a90d9); --success: var(--spa-success, #2e7d32); }
+        .wa-dark { color-scheme: dark; }
+        body { margin: 0; font: 15px/1.45 system-ui, sans-serif; background: var(--surface-2); color: CanvasText; }
+        spa-nav { justify-content: space-between; }
+        .brand { font-size: 1.05rem; }
+        .page { box-sizing: border-box; width: 100%; max-width: 70rem; margin: 0 auto; padding: 1.5rem 1rem; display: grid;
+          grid-template-columns: minmax(0, 1fr); align-content: start; gap: 1rem; }
+        .lede, .muted, .stat-label { color: var(--muted); }
+        .lede { margin: 0; }
+        .stats { flex-wrap: wrap; }
+        .stat { flex: 1 1 12rem; display: grid; gap: .35rem; padding: 1rem; border: 1px solid var(--border); border-radius: .75rem; background: var(--surface); }
+        .stat strong { font-size: 1.75rem; }
+        /* Lion's progress indicator draws nothing of its own; the page draws it from the value it is given */
+        lion-progress-indicator { display: block; height: .5rem; border-radius: .25rem;
+          background: linear-gradient(to right, var(--accent) var(--progress, 0%), var(--border) 0); }
+        lion-switch [slot="label"] { margin-inline-end: .5rem; }
+        lion-tabs > [slot="tab"] { font: inherit; padding: .5rem 1rem; border: 0; border-bottom: 2px solid transparent; background: none;
+          color: var(--muted); cursor: pointer; }
+        lion-tabs > [slot="tab"][selected] { color: CanvasText; border-bottom-color: var(--accent); }
+        .panel { padding-top: 1rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 1.5rem; }
+        .form-grid .wide { grid-column: 1 / -1; }
+        .form-grid input, .form-grid textarea, lion-select-rich lion-select-invoker, lion-combobox input {
+          box-sizing: border-box; width: 100%; font: inherit; padding: .5rem .6rem; border: 1px solid var(--border); border-radius: .5rem;
+          background: var(--surface); color: CanvasText; }
+        .form-grid [type="radio"], .form-grid [type="checkbox"], .form-grid [type="range"] { width: auto; }
+        .form-grid [slot="label"], .form-grid label { font-weight: 600; }
+        .form-grid [slot="help-text"] { color: var(--muted); font-size: .85rem; }
+        .with-hint { display: flex; gap: .5rem; align-items: start; }
+        .with-hint lion-input-iban { flex: 1; }
+        .hint { margin-top: 1.6rem; width: 1.6rem; height: 1.6rem; border-radius: 50%; border: 1px solid var(--border); background: var(--surface); color: inherit; }
+        .tooltip { padding: .4rem .6rem; border-radius: .4rem; background: CanvasText; color: Canvas; font-size: .85rem; }
+        .preview { margin: 1rem 0; color: var(--muted); }
+        /* Lion's switch keeps its track and thumb in its own shadow root; round off the host */
+        lion-switch-button { border-radius: 999px; overflow: hidden; box-shadow: inset 0 0 0 1px var(--border); }
+        lion-switch-button[checked] { box-shadow: 0 0 0 2px var(--accent); }
+        lion-button, lion-button-submit, lion-button-reset { padding: .5rem 1rem; border-radius: .5rem; border: 1px solid var(--border);
+          background: var(--surface); color: CanvasText; cursor: pointer; }
+        lion-button-submit { background: var(--accent); color: #fff; border-color: transparent; }
+        lion-button[disabled] { opacity: .5; cursor: default; }
+        .queue { display: grid; gap: .5rem; }
+        .application { display: grid; grid-template-columns: minmax(0, 1fr) 10rem 6rem auto; align-items: center; gap: 1rem; padding: .75rem 1rem;
+          border: 1px solid var(--border); border-radius: .75rem; background: var(--surface); }
+        .application-main { display: grid; }
+        .status[data-status="Approved"] { color: var(--success); font-weight: 600; }
+        .help { display: grid; gap: 1rem; }
+        .accordion-invoker, .link { font: inherit; background: none; border: 0; padding: .5rem 0; color: var(--accent); cursor: pointer; }
+        h3 { margin: 0; }
+        .accordion-content { margin: 0 0 .5rem; color: var(--muted); }
+        .dialog { max-width: 28rem; padding: 1.25rem 1.5rem; border-radius: .75rem; background: var(--surface); box-shadow: 0 20px 50px rgb(0 0 0 / .25); }
+        .dialog h2 { margin-top: 0; }
+        #confirm-close { font: inherit; padding: .4rem 1rem; border-radius: .5rem; border: 0; background: var(--accent); color: #fff; }
+        @media (max-width: 720px) {
+          .form-grid { grid-template-columns: 1fr; }
+          .application { grid-template-columns: 1fr auto; }
+          .application lion-progress-indicator { grid-column: 1 / -1; }
+        }
+      </style>
+      """
+
+   .. raw:: html
+
+      </details>
+
+
+
+.. py:data:: app
+
