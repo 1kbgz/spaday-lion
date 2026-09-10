@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@lion/ui':
+        specifier: 0.21.1
+        version: 0.21.1
     devDependencies:
       '@playwright/test':
         specifier: ^1.62.1
@@ -40,6 +44,9 @@ importers:
         version: 7.0.2
 
 packages:
+
+  '@bundled-es-modules/message-format@6.2.4':
+    resolution: {integrity: sha512-NBaIEUCzSjLZjrsmSOh8PJLqQjSpXVuekIOuUT8tt4N/FdtAavWsC1YinIqIrbRnkBqV90OxgKzsxhFCzETQBw==}
 
   '@esbuild/aix-ppc64@0.28.2':
     resolution: {integrity: sha512-XExcO+dvLKvVtNTibSTBej1NCAbaGhWn9Ww1ZPx80qsahhPFe/8jgWP0IchNe0F3HwkU7n8ejhH8bjonqht8mQ==}
@@ -197,6 +204,15 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@lion/ui@0.21.1':
+    resolution: {integrity: sha512-5koislLJBMWT1XiNIJM920UMZw3LpPMU3yyy1ps0SrHsAmkTAYa9NpPL7nwcgr+dPnDp7NwJoBvtX/bJuDnG/A==}
+
+  '@lit-labs/ssr-dom-shim@1.6.0':
+    resolution: {integrity: sha512-VHb0ALPMTlgKjM6yIxxoQNnpKyUKLD04VzeQdsiXkMqkvYlAHxq9glGLmgbb889/1GsohSOAjvQYoiBppXFqrQ==}
+
+  '@lit/reactive-element@2.1.2':
+    resolution: {integrity: sha512-pbCDiVMnne1lYUIaYNN5wrwQXDtHaYtg7YEFPeW+hws6U47WeFvISGUWekPGKWOP1ygrs0ef0o1VJMk1exos5A==}
+
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -208,6 +224,12 @@ packages:
   '@nodelib/fs.walk@1.2.8':
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
+
+  '@open-wc/dedupe-mixin@2.0.1':
+    resolution: {integrity: sha512-+R4VxvceUxHAUJXJQipkkoV9fy10vNo+OnUnGKZnVmcwxMl460KLzytnUM4S35SI073R0yZQp9ra0MbPUwVcEA==}
+
+  '@open-wc/scoped-elements@3.0.10':
+    resolution: {integrity: sha512-esE95vxq6Y7w9/8H/oPvqN9QVR+ys3F9J2/ITyuTWnlSYaJueQmcS5CR5OybJMjjm9R5pmSoOe6Vau/O7J6d2g==}
 
   '@oxfmt/binding-android-arm-eabi@0.66.0':
     resolution: {integrity: sha512-2Me9eoptv6ERdEuI2P8AOlYdHHraXebJaM6SC0kc2Dfb+mLrep2db+fedBPKaYn673h/vBgvP4tkOdAbaudX6w==}
@@ -458,9 +480,15 @@ packages:
     engines: {node: '>=20'}
     hasBin: true
 
+  '@popperjs/core@2.11.8':
+    resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
+
   '@sindresorhus/merge-streams@4.0.0':
     resolution: {integrity: sha512-tlqY9xq5ukxTUZBmoOp+m61cqwQD5pHJtFY3Mn8CA8ps6yghLH/Hw8UPdqg4OLmFW3IFlcXnQNmo/dh8HzXYIQ==}
     engines: {node: '>=18'}
+
+  '@types/trusted-types@2.0.7':
+    resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
 
   '@typescript/typescript-aix-ppc64@7.0.2':
     resolution: {integrity: sha512-MTKKkWB7p/0E9xi1d1tHtZ5PiLkGEMIq88pK2CubZjOsLtYTLqhgIgi6zepFa+9GHZ6h05NMCkQxGKiPXMxXtQ==}
@@ -609,9 +637,16 @@ packages:
   async@3.2.6:
     resolution: {integrity: sha512-htCUDlxyyCLMgaM3xXg0C0LW2xqfuQ6p05pCEIsXuyQ+a1koYKTuBMzRNwmybfLgvJDMd0r1LTn4+E0Ti6C2AA==}
 
+  autosize@6.0.1:
+    resolution: {integrity: sha512-f86EjiUKE6Xvczc4ioP1JBlWG7FKrE13qe/DxBCpe8GCipCq2nFw73aO8QEBKHfSbYGDN5eB9jXWKen7tspDqQ==}
+
   available-typed-arrays@1.0.7:
     resolution: {integrity: sha512-wvUjBtSGN7+7SjNpq/9M2Tg350UZD3q62IFZLbRAR1bSMlCo1ZaeW+BJ+D090e4hIIZLBcTDWe4Mh4jvUDajzQ==}
     engines: {node: '>= 0.4'}
+
+  awesome-phonenumber@7.8.0:
+    resolution: {integrity: sha512-zw23nvKt6gLGgCrKZ5Z7ZK0lm3k39/uZTw+cWp5tpiXVfEFSt9AEVFDzSycws76G64xOMrIVp2upYvJxwRgzvw==}
+    engines: {node: '>=18'}
 
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
@@ -905,6 +940,9 @@ packages:
     engines: {node: '>=12'}
     hasBin: true
 
+  ibantools@4.5.4:
+    resolution: {integrity: sha512-6jX1gh4aH6XH+o0ey+wtkMTzkcvsEta7DakIOZSng9voZYpMw3U+gK1+tZChk3aRcPcloEt0NOzksjaRZiqXbw==}
+
   iconv-lite@0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
     engines: {node: '>=0.10.0'}
@@ -1121,6 +1159,15 @@ packages:
   lightningcss@1.33.0:
     resolution: {integrity: sha512-WkUDrojuJs0xkgGf2udWxa3yGBRxPtxUkB79i6aCZLRgc7PM8fZe9TosfPDcvEpQZbuFASnHYmRLBLUbmLOIIA==}
     engines: {node: '>= 12.0.0'}
+
+  lit-element@4.2.2:
+    resolution: {integrity: sha512-aFKhNToWxoyhkNDmWZwEva2SlQia+jfG0fjIWV//YeTaWrVnOxD89dPKfigCUspXFmjzOEUQpOkejH5Ly6sG0w==}
+
+  lit-html@3.3.3:
+    resolution: {integrity: sha512-el8M6jK2o3RXBnrSHX3ZKrsN8zEV63pSExTO1wYJz7QndGYZ8353e2a5PPX+qHe2aGayfnchQmkAojaWAREOIA==}
+
+  lit@3.3.3:
+    resolution: {integrity: sha512-fycuvZg/hkpozL00lm1pEJH5nN/lr9ZXd6mJI2HSN4+Bzc+LDNdEApJ6HFbPkdFNHLvOplIIuJvxkS4XUxqirw==}
 
   load-json-file@4.0.0:
     resolution: {integrity: sha512-Kx8hMakjX03tiGTLAIdJ+lL0htKnXjEZN6hk/tozf/WOuYGdZBJrZ+rCJRbVCugsjB3jMLn9746NsQIf5VjBMw==}
@@ -1403,6 +1450,9 @@ packages:
     resolution: {integrity: sha512-a2B9Y0KlNXl9u/vsW6sTIu9vGEpfKu2wRV6l1H3XEas/0gUIzGzBoP/IouTcUQbm9JWZLH3COxyn03TYlFax6w==}
     engines: {node: '>=10'}
 
+  singleton-manager@1.8.0:
+    resolution: {integrity: sha512-1M3qImeT5j74a/GtRwM8Q+JOMwhiNRE/uJtIu+U6LBgbRvl9reoeFbQ+ZALR0CwCqg2hhwmLAGZ9KuxefuIWlA==}
+
   slash@5.1.0:
     resolution: {integrity: sha512-ZA6oR3T/pEyuqwMgAKT0/hAv8oAXckzbkmR0UkUosQ+Mc4RxGoJkRmwHgHufaenlyAgE1Mxgpdcrf75y6XcnDg==}
     engines: {node: '>=14.16'}
@@ -1536,6 +1586,8 @@ packages:
 
 snapshots:
 
+  '@bundled-es-modules/message-format@6.2.4': {}
+
   '@esbuild/aix-ppc64@0.28.2':
     optional: true
 
@@ -1614,6 +1666,24 @@ snapshots:
   '@esbuild/win32-x64@0.28.2':
     optional: true
 
+  '@lion/ui@0.21.1':
+    dependencies:
+      '@bundled-es-modules/message-format': 6.2.4
+      '@open-wc/dedupe-mixin': 2.0.1
+      '@open-wc/scoped-elements': 3.0.10
+      '@popperjs/core': 2.11.8
+      autosize: 6.0.1
+      awesome-phonenumber: 7.8.0
+      ibantools: 4.5.4
+      lit: 3.3.3
+      singleton-manager: 1.8.0
+
+  '@lit-labs/ssr-dom-shim@1.6.0': {}
+
+  '@lit/reactive-element@2.1.2':
+    dependencies:
+      '@lit-labs/ssr-dom-shim': 1.6.0
+
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
       '@nodelib/fs.stat': 2.0.5
@@ -1625,6 +1695,13 @@ snapshots:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.1
+
+  '@open-wc/dedupe-mixin@2.0.1': {}
+
+  '@open-wc/scoped-elements@3.0.10':
+    dependencies:
+      '@open-wc/dedupe-mixin': 2.0.1
+      lit: 3.3.3
 
   '@oxfmt/binding-android-arm-eabi@0.66.0':
     optional: true
@@ -1744,7 +1821,11 @@ snapshots:
     dependencies:
       playwright: 1.62.1
 
+  '@popperjs/core@2.11.8': {}
+
   '@sindresorhus/merge-streams@4.0.0': {}
+
+  '@types/trusted-types@2.0.7': {}
 
   '@typescript/typescript-aix-ppc64@7.0.2':
     optional: true
@@ -1838,9 +1919,13 @@ snapshots:
 
   async@3.2.6: {}
 
+  autosize@6.0.1: {}
+
   available-typed-arrays@1.0.7:
     dependencies:
       possible-typed-array-names: 1.1.0
+
+  awesome-phonenumber@7.8.0: {}
 
   balanced-match@1.0.2: {}
 
@@ -2265,6 +2350,8 @@ snapshots:
       - debug
       - supports-color
 
+  ibantools@4.5.4: {}
+
   iconv-lite@0.6.3:
     dependencies:
       safer-buffer: 2.1.2
@@ -2455,6 +2542,22 @@ snapshots:
       lightningcss-linux-x64-musl: 1.33.0
       lightningcss-win32-arm64-msvc: 1.33.0
       lightningcss-win32-x64-msvc: 1.33.0
+
+  lit-element@4.2.2:
+    dependencies:
+      '@lit-labs/ssr-dom-shim': 1.6.0
+      '@lit/reactive-element': 2.1.2
+      lit-html: 3.3.3
+
+  lit-html@3.3.3:
+    dependencies:
+      '@types/trusted-types': 2.0.7
+
+  lit@3.3.3:
+    dependencies:
+      '@lit/reactive-element': 2.1.2
+      lit-element: 4.2.2
+      lit-html: 3.3.3
 
   load-json-file@4.0.0:
     dependencies:
@@ -2784,6 +2887,8 @@ snapshots:
   simple-update-notifier@2.0.0:
     dependencies:
       semver: 7.8.5
+
+  singleton-manager@1.8.0: {}
 
   slash@5.1.0: {}
 
