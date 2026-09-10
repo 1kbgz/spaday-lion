@@ -1,11 +1,13 @@
 # spaday-lion
 
-Typed [Lion](https://lion.js.org) components and browser assets for spaday.
+Typed [Lion](https://lion.js.org) components and browser assets for [spaday](https://github.com/1kbgz/spaday).
 
 [![Build Status](https://github.com/1kbgz/spaday-lion/actions/workflows/build.yaml/badge.svg?branch=main&event=push)](https://github.com/1kbgz/spaday-lion/actions/workflows/build.yaml)
 [![codecov](https://codecov.io/gh/1kbgz/spaday-lion/branch/main/graph/badge.svg)](https://codecov.io/gh/1kbgz/spaday-lion)
 [![License](https://img.shields.io/github/license/1kbgz/spaday-lion)](https://github.com/1kbgz/spaday-lion)
 [![PyPI](https://img.shields.io/pypi/v/spaday-lion.svg)](https://pypi.python.org/pypi/spaday-lion)
+
+[![Preview of lion components in spaday rendering a bank account opening page](https://raw.githubusercontent.com/1kbgz/spaday-lion/main/docs/img/preview.webp)](./spaday_lion/example.py)
 
 ## Overview
 
@@ -57,14 +59,6 @@ Lion registers global custom element names, so a second copy on the page throws 
 `@lion/ui/button.js`, `@lion/ui/define/lion-button.js`, the translation modules and the rest of its
 exports — through the page's import map. A library built on Lion that leaves those imports out of its
 bundle (`external: ["@lion/ui"]` with esbuild) gets this copy, and nothing registers twice.
-
-## Development
-
-`make catalog` regenerates the typed classes from the installed Lion package: it collects its
-manifest into `spaday_lion/custom-elements.json` (`js/tools/manifest.mjs`) and generates
-`spaday_lion/components.py` from it. Lion's published manifest also carries test fixtures, Storybook
-helpers and a few misnamed tags; the collector keeps exactly the elements Lion's define modules
-register.
 
 > [!NOTE]
 > This library was generated using [copier](https://copier.readthedocs.io/en/stable/) from the [Base Python Project Template repository](https://github.com/python-project-templates/base).
