@@ -27,6 +27,12 @@ build-js:
 
 build: build-js build-py  ## build the project
 
+.PHONY: catalog
+catalog:  ## regenerate the typed catalog from Lion's manifest
+	cd js; pnpm manifest
+	python -m spaday.cem spaday_lion/custom-elements.json -o spaday_lion/components.py
+	python -m ruff format spaday_lion/components.py
+
 .PHONY: install
 install:  ## install python library
 	uv pip install .
