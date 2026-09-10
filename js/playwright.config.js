@@ -29,6 +29,12 @@ export default defineConfig({
       timeout: 120 * 1000,
     },
     {
+      command: "python -m spaday_lion.example",
+      url: "http://127.0.0.1:8025",
+      reuseExistingServer: !process.env.CI,
+      timeout: 120 * 1000,
+    },
+    {
       // by path, not `-m`: the tests directory is not an importable package
       command: "python ../spaday_lion/tests/integration.py",
       url: "http://127.0.0.1:8020",
