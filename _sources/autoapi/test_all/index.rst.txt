@@ -4,16 +4,47 @@ test_all
 .. py:module:: test_all
 
 
+Attributes
+----------
+
+.. autoapisummary::
+
+   test_all.ROOT
+
+
 Functions
 ---------
 
 .. autoapisummary::
 
-   test_all.test_all
+   test_all.test_generated_components_serialize
+   test_all.test_catalog_is_the_elements_lion_registers
+   test_all.test_inherited_attributes_reach_the_catalog
+   test_all.test_package_drives_bootstrap_asset_urls
+   test_all.test_published_imports_are_served
+   test_all.test_tokens_are_deliberately_empty
+   test_all.test_generated_catalog_is_current
 
 
 Module Contents
 ---------------
 
-.. py:function:: test_all()
+.. py:data:: ROOT
+
+.. py:function:: test_generated_components_serialize()
+
+.. py:function:: test_catalog_is_the_elements_lion_registers()
+
+.. py:function:: test_inherited_attributes_reach_the_catalog()
+
+   Lion's manifest names its mixins by package specifier, so the collector resolves them.
+
+
+.. py:function:: test_package_drives_bootstrap_asset_urls()
+
+.. py:function:: test_published_imports_are_served()
+
+.. py:function:: test_tokens_are_deliberately_empty()
+
+.. py:function:: test_generated_catalog_is_current()
 

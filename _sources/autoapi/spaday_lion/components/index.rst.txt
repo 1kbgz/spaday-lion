@@ -1,25 +1,7 @@
-spaday_lion
-===========
+spaday_lion.components
+======================
 
-.. py:module:: spaday_lion
-
-
-Submodules
-----------
-
-.. toctree::
-   :maxdepth: 1
-
-   /autoapi/spaday_lion/components/index
-
-
-Attributes
-----------
-
-.. autoapisummary::
-
-   spaday_lion.package
-   spaday_lion.TOKENS
+.. py:module:: spaday_lion.components
 
 
 Classes
@@ -27,57 +9,57 @@ Classes
 
 .. autoapisummary::
 
-   spaday_lion.LionAccordion
-   spaday_lion.LionButton
-   spaday_lion.LionButtonReset
-   spaday_lion.LionButtonSubmit
-   spaday_lion.LionCalendar
-   spaday_lion.LionCheckbox
-   spaday_lion.LionCheckboxGroup
-   spaday_lion.LionCheckboxIndeterminate
-   spaday_lion.LionCollapsible
-   spaday_lion.LionCombobox
-   spaday_lion.LionDialog
-   spaday_lion.LionDrawer
-   spaday_lion.LionField
-   spaday_lion.LionFieldset
-   spaday_lion.LionForm
-   spaday_lion.LionIcon
-   spaday_lion.LionInput
-   spaday_lion.LionInputAmount
-   spaday_lion.LionInputAmountDropdown
-   spaday_lion.LionInputDate
-   spaday_lion.LionInputDatepicker
-   spaday_lion.LionInputEmail
-   spaday_lion.LionInputFile
-   spaday_lion.LionInputIban
-   spaday_lion.LionInputRange
-   spaday_lion.LionInputStepper
-   spaday_lion.LionInputTel
-   spaday_lion.LionInputTelDropdown
-   spaday_lion.LionListbox
-   spaday_lion.LionOption
-   spaday_lion.LionOptions
-   spaday_lion.LionPagination
-   spaday_lion.LionProgressIndicator
-   spaday_lion.LionRadio
-   spaday_lion.LionRadioGroup
-   spaday_lion.LionSelect
-   spaday_lion.LionSelectInvoker
-   spaday_lion.LionSelectRich
-   spaday_lion.LionSelectedFileList
-   spaday_lion.LionStep
-   spaday_lion.LionSteps
-   spaday_lion.LionSwitch
-   spaday_lion.LionSwitchButton
-   spaday_lion.LionTabs
-   spaday_lion.LionTextarea
-   spaday_lion.LionTooltip
-   spaday_lion.LionValidationFeedback
+   spaday_lion.components.LionAccordion
+   spaday_lion.components.LionButton
+   spaday_lion.components.LionButtonReset
+   spaday_lion.components.LionButtonSubmit
+   spaday_lion.components.LionCalendar
+   spaday_lion.components.LionCheckboxGroup
+   spaday_lion.components.LionCheckboxIndeterminate
+   spaday_lion.components.LionCheckbox
+   spaday_lion.components.LionCollapsible
+   spaday_lion.components.LionCombobox
+   spaday_lion.components.LionDialog
+   spaday_lion.components.LionDrawer
+   spaday_lion.components.LionFieldset
+   spaday_lion.components.LionField
+   spaday_lion.components.LionValidationFeedback
+   spaday_lion.components.LionForm
+   spaday_lion.components.LionIcon
+   spaday_lion.components.LionInputAmountDropdown
+   spaday_lion.components.LionInputAmount
+   spaday_lion.components.LionInputDate
+   spaday_lion.components.LionInputDatepicker
+   spaday_lion.components.LionInputEmail
+   spaday_lion.components.LionInputFile
+   spaday_lion.components.LionSelectedFileList
+   spaday_lion.components.LionInputIban
+   spaday_lion.components.LionInputRange
+   spaday_lion.components.LionInputStepper
+   spaday_lion.components.LionInputTelDropdown
+   spaday_lion.components.LionInputTel
+   spaday_lion.components.LionInput
+   spaday_lion.components.LionListbox
+   spaday_lion.components.LionOption
+   spaday_lion.components.LionOptions
+   spaday_lion.components.LionPagination
+   spaday_lion.components.LionProgressIndicator
+   spaday_lion.components.LionRadioGroup
+   spaday_lion.components.LionRadio
+   spaday_lion.components.LionSelectRich
+   spaday_lion.components.LionSelectInvoker
+   spaday_lion.components.LionSelect
+   spaday_lion.components.LionSteps
+   spaday_lion.components.LionStep
+   spaday_lion.components.LionSwitch
+   spaday_lion.components.LionSwitchButton
+   spaday_lion.components.LionTabs
+   spaday_lion.components.LionTextarea
+   spaday_lion.components.LionTooltip
 
 
-Package Contents
-----------------
+Module Contents
+---------------
 
 .. py:class:: LionAccordion(*children: spaday.component.Child, key: str | None = None, focusedIndex: float | None = None, expanded: Any = None, exclusive: bool | None = None, **props: Any)
 
@@ -173,29 +155,6 @@ Package Contents
    .. py:attribute:: schema
 
 
-.. py:class:: LionCheckbox(*children: spaday.component.Child, key: str | None = None, checked: bool | None = None, disabled: bool | None = None, modelValue: Any = None, choiceValue: Any = None, autocomplete: str | None = None, focused: bool | None = None, focused_visible: bool | None = None, autofocus: bool | None = None, readonly: bool | None = None, label: str | None = None, label_sr_only: bool | None = None, help_text: str | None = None, type: str | None = None, placeholder: str | None = None, name: str | None = None, allow_cross_root_registration: bool | None = None, touched: bool | None = None, dirty: bool | None = None, filled: bool | None = None, shows_feedback_for: Any = None, is_pending: bool | None = None, **props: Any)
-
-   Bases: :py:obj:`spaday.component.Component`
-
-
-   Base for a node in the spaday component tree.
-
-   Author it two equivalent ways: nest children **positionally** in the constructor and set generic
-   props as keywords — ``App(Nav("title"), Body(...), id="root")`` — or build it up fluently with
-   ``.child()`` / ``.prop()``. A string child becomes a text node. Subclasses set the class attribute
-   ``tag`` and forward their typed props via ``props=`` (only the ones the author set — ``None`` means
-   "leave the element's own default"). CEM-generated subclasses also set the class-level ``schema``
-   used by component catalogs; hand-authored catalog components may set it explicitly.
-
-
-   .. py:attribute:: tag
-      :value: 'lion-checkbox'
-
-
-
-   .. py:attribute:: schema
-
-
 .. py:class:: LionCheckboxGroup(*children: spaday.component.Child, key: str | None = None, multiple_choice: bool | None = None, _isFormOrFieldset: bool | None = None, shows_feedback_for: Any = None, is_pending: bool | None = None, touched: bool | None = None, dirty: bool | None = None, filled: bool | None = None, submitted: bool | None = None, focused: bool | None = None, prefilled: bool | None = None, readonly: bool | None = None, label: str | None = None, label_sr_only: bool | None = None, help_text: str | None = None, disabled: bool | None = None, name: str | None = None, allow_cross_root_registration: bool | None = None, **props: Any)
 
    Bases: :py:obj:`spaday.component.Component`
@@ -229,6 +188,29 @@ Package Contents
 
    .. py:attribute:: tag
       :value: 'lion-checkbox-indeterminate'
+
+
+
+   .. py:attribute:: schema
+
+
+.. py:class:: LionCheckbox(*children: spaday.component.Child, key: str | None = None, checked: bool | None = None, disabled: bool | None = None, modelValue: Any = None, choiceValue: Any = None, autocomplete: str | None = None, focused: bool | None = None, focused_visible: bool | None = None, autofocus: bool | None = None, readonly: bool | None = None, label: str | None = None, label_sr_only: bool | None = None, help_text: str | None = None, type: str | None = None, placeholder: str | None = None, name: str | None = None, allow_cross_root_registration: bool | None = None, touched: bool | None = None, dirty: bool | None = None, filled: bool | None = None, shows_feedback_for: Any = None, is_pending: bool | None = None, **props: Any)
+
+   Bases: :py:obj:`spaday.component.Component`
+
+
+   Base for a node in the spaday component tree.
+
+   Author it two equivalent ways: nest children **positionally** in the constructor and set generic
+   props as keywords — ``App(Nav("title"), Body(...), id="root")`` — or build it up fluently with
+   ``.child()`` / ``.prop()``. A string child becomes a text node. Subclasses set the class attribute
+   ``tag`` and forward their typed props via ``props=`` (only the ones the author set — ``None`` means
+   "leave the element's own default"). CEM-generated subclasses also set the class-level ``schema``
+   used by component catalogs; hand-authored catalog components may set it explicitly.
+
+
+   .. py:attribute:: tag
+      :value: 'lion-checkbox'
 
 
 
@@ -306,6 +288,22 @@ Package Contents
    .. py:attribute:: schema
 
 
+.. py:class:: LionFieldset(*children: spaday.component.Child, key: str | None = None, submitted: bool | None = None, focused: bool | None = None, dirty: bool | None = None, touched: bool | None = None, prefilled: bool | None = None, _isFormOrFieldset: bool | None = None, readonly: bool | None = None, label: str | None = None, label_sr_only: bool | None = None, help_text: str | None = None, shows_feedback_for: Any = None, is_pending: bool | None = None, disabled: bool | None = None, name: str | None = None, allow_cross_root_registration: bool | None = None, **props: Any)
+
+   Bases: :py:obj:`spaday.component.Component`
+
+
+   LionFieldset is basically a 'sub form' and can have its own nested sub forms. It mimics the native <fieldset> element in this sense, but has all the functionality of a FormControl (advanced styling, validation, interaction states etc.) Also see FormGroupMixin it depends on. LionFieldset enables the '_isFormOrFieldset' flag in FormRegistrarMixin. This makes .formElements act not only as an array, but also as an object (see FormRegistarMixin for more information). As a bonus, It can also group children having names ending with '[]'. Above will be helpful for both forms and sub forms, which can contain sub forms as children as well and allow for a nested form structure. Contrary, other form groups (choice groups like radio-group, checkbox-group and (multi)select) don't: they should be considered 'end nodes' or 'leaves' of the form and their children/formElements cannot be accessed individually via object keys.
+
+
+   .. py:attribute:: tag
+      :value: 'lion-fieldset'
+
+
+
+   .. py:attribute:: schema
+
+
 .. py:class:: LionField(*children: spaday.component.Child, key: str | None = None, readonly: bool | None = None, label: str | None = None, label_sr_only: bool | None = None, help_text: str | None = None, name: str | None = None, allow_cross_root_registration: bool | None = None, disabled: bool | None = None, touched: bool | None = None, dirty: bool | None = None, filled: bool | None = None, focused: bool | None = None, focused_visible: bool | None = None, autofocus: bool | None = None, shows_feedback_for: Any = None, is_pending: bool | None = None, **props: Any)
 
    Bases: :py:obj:`spaday.component.Component`
@@ -322,16 +320,23 @@ Package Contents
    .. py:attribute:: schema
 
 
-.. py:class:: LionFieldset(*children: spaday.component.Child, key: str | None = None, submitted: bool | None = None, focused: bool | None = None, dirty: bool | None = None, touched: bool | None = None, prefilled: bool | None = None, _isFormOrFieldset: bool | None = None, readonly: bool | None = None, label: str | None = None, label_sr_only: bool | None = None, help_text: str | None = None, shows_feedback_for: Any = None, is_pending: bool | None = None, disabled: bool | None = None, name: str | None = None, allow_cross_root_registration: bool | None = None, **props: Any)
+.. py:class:: LionValidationFeedback(*children: spaday.component.Child, key: str | None = None, **props: Any)
 
    Bases: :py:obj:`spaday.component.Component`
 
 
-   LionFieldset is basically a 'sub form' and can have its own nested sub forms. It mimics the native <fieldset> element in this sense, but has all the functionality of a FormControl (advanced styling, validation, interaction states etc.) Also see FormGroupMixin it depends on. LionFieldset enables the '_isFormOrFieldset' flag in FormRegistrarMixin. This makes .formElements act not only as an array, but also as an object (see FormRegistarMixin for more information). As a bonus, It can also group children having names ending with '[]'. Above will be helpful for both forms and sub forms, which can contain sub forms as children as well and allow for a nested form structure. Contrary, other form groups (choice groups like radio-group, checkbox-group and (multi)select) don't: they should be considered 'end nodes' or 'leaves' of the form and their children/formElements cannot be accessed individually via object keys.
+   Base for a node in the spaday component tree.
+
+   Author it two equivalent ways: nest children **positionally** in the constructor and set generic
+   props as keywords — ``App(Nav("title"), Body(...), id="root")`` — or build it up fluently with
+   ``.child()`` / ``.prop()``. A string child becomes a text node. Subclasses set the class attribute
+   ``tag`` and forward their typed props via ``props=`` (only the ones the author set — ``None`` means
+   "leave the element's own default"). CEM-generated subclasses also set the class-level ``schema``
+   used by component catalogs; hand-authored catalog components may set it explicitly.
 
 
    .. py:attribute:: tag
-      :value: 'lion-fieldset'
+      :value: 'lion-validation-feedback'
 
 
 
@@ -370,16 +375,16 @@ Package Contents
    .. py:attribute:: schema
 
 
-.. py:class:: LionInput(*children: spaday.component.Child, key: str | None = None, readonly: bool | None = None, type: str | None = None, placeholder: str | None = None, autocomplete: str | None = None, focused: bool | None = None, focused_visible: bool | None = None, autofocus: bool | None = None, label: str | None = None, label_sr_only: bool | None = None, help_text: str | None = None, name: str | None = None, allow_cross_root_registration: bool | None = None, disabled: bool | None = None, touched: bool | None = None, dirty: bool | None = None, filled: bool | None = None, shows_feedback_for: Any = None, is_pending: bool | None = None, **props: Any)
+.. py:class:: LionInputAmountDropdown(*children: spaday.component.Child, key: str | None = None, preferredCurrencies: Any = None, allowedCurrencies: Any = None, __dropdownSlot: str | None = None, currency: str | None = None, modelValue: Any = None, autocomplete: str | None = None, focused: bool | None = None, focused_visible: bool | None = None, autofocus: bool | None = None, readonly: bool | None = None, label: str | None = None, label_sr_only: bool | None = None, help_text: str | None = None, type: str | None = None, placeholder: str | None = None, name: str | None = None, allow_cross_root_registration: bool | None = None, disabled: bool | None = None, touched: bool | None = None, dirty: bool | None = None, filled: bool | None = None, shows_feedback_for: Any = None, is_pending: bool | None = None, **props: Any)
 
    Bases: :py:obj:`spaday.component.Component`
 
 
-   LionInput: extension of lion-field with native input element in place and user friendly API.
+   LionInputAmountDropdown renders a dropdown like element next to the text field, inside the prefix, or suffix, slot. This could be a LionSelect, a LionSelectRich or a native select. By default, the native `<select>` element is used for this, so that it's as lightweight as possible. Also, it doesn't need to be a `FormControl`, because it's purely a helper element to provide better UX: the modelValue (the text field) contains all needed info: the currency code following ISO 4217 and its corresponding currency symbol using Intl.
 
 
    .. py:attribute:: tag
-      :value: 'lion-input'
+      :value: 'lion-input-amount-dropdown'
 
 
 
@@ -396,22 +401,6 @@ Package Contents
 
    .. py:attribute:: tag
       :value: 'lion-input-amount'
-
-
-
-   .. py:attribute:: schema
-
-
-.. py:class:: LionInputAmountDropdown(*children: spaday.component.Child, key: str | None = None, preferredCurrencies: Any = None, allowedCurrencies: Any = None, __dropdownSlot: str | None = None, currency: str | None = None, modelValue: Any = None, autocomplete: str | None = None, focused: bool | None = None, focused_visible: bool | None = None, autofocus: bool | None = None, readonly: bool | None = None, label: str | None = None, label_sr_only: bool | None = None, help_text: str | None = None, type: str | None = None, placeholder: str | None = None, name: str | None = None, allow_cross_root_registration: bool | None = None, disabled: bool | None = None, touched: bool | None = None, dirty: bool | None = None, filled: bool | None = None, shows_feedback_for: Any = None, is_pending: bool | None = None, **props: Any)
-
-   Bases: :py:obj:`spaday.component.Component`
-
-
-   LionInputAmountDropdown renders a dropdown like element next to the text field, inside the prefix, or suffix, slot. This could be a LionSelect, a LionSelectRich or a native select. By default, the native `<select>` element is used for this, so that it's as lightweight as possible. Also, it doesn't need to be a `FormControl`, because it's purely a helper element to provide better UX: the modelValue (the text field) contains all needed info: the currency code following ISO 4217 and its corresponding currency symbol using Intl.
-
-
-   .. py:attribute:: tag
-      :value: 'lion-input-amount-dropdown'
 
 
 
@@ -489,6 +478,29 @@ Package Contents
    .. py:attribute:: schema
 
 
+.. py:class:: LionSelectedFileList(*children: spaday.component.Child, key: str | None = None, fileList: Any = None, multiple: bool | None = None, **props: Any)
+
+   Bases: :py:obj:`spaday.component.Component`
+
+
+   Base for a node in the spaday component tree.
+
+   Author it two equivalent ways: nest children **positionally** in the constructor and set generic
+   props as keywords — ``App(Nav("title"), Body(...), id="root")`` — or build it up fluently with
+   ``.child()`` / ``.prop()``. A string child becomes a text node. Subclasses set the class attribute
+   ``tag`` and forward their typed props via ``props=`` (only the ones the author set — ``None`` means
+   "leave the element's own default"). CEM-generated subclasses also set the class-level ``schema``
+   used by component catalogs; hand-authored catalog components may set it explicitly.
+
+
+   .. py:attribute:: tag
+      :value: 'lion-selected-file-list'
+
+
+
+   .. py:attribute:: schema
+
+
 .. py:class:: LionInputIban(*children: spaday.component.Child, key: str | None = None, autocomplete: str | None = None, focused: bool | None = None, focused_visible: bool | None = None, autofocus: bool | None = None, readonly: bool | None = None, label: str | None = None, label_sr_only: bool | None = None, help_text: str | None = None, type: str | None = None, placeholder: str | None = None, name: str | None = None, allow_cross_root_registration: bool | None = None, disabled: bool | None = None, touched: bool | None = None, dirty: bool | None = None, filled: bool | None = None, shows_feedback_for: Any = None, is_pending: bool | None = None, **props: Any)
 
    Bases: :py:obj:`spaday.component.Component`
@@ -537,6 +549,22 @@ Package Contents
    .. py:attribute:: schema
 
 
+.. py:class:: LionInputTelDropdown(*children: spaday.component.Child, key: str | None = None, allowedRegions: Any = None, format_strategy: Any = None, format_country_code_style: str | None = None, activeRegion: str | None = None, preferredRegions: Any = None, _phoneUtil: Any = None, autocomplete: str | None = None, focused: bool | None = None, focused_visible: bool | None = None, autofocus: bool | None = None, readonly: bool | None = None, label: str | None = None, label_sr_only: bool | None = None, help_text: str | None = None, type: str | None = None, placeholder: str | None = None, name: str | None = None, allow_cross_root_registration: bool | None = None, disabled: bool | None = None, touched: bool | None = None, dirty: bool | None = None, filled: bool | None = None, shows_feedback_for: Any = None, is_pending: bool | None = None, **props: Any)
+
+   Bases: :py:obj:`spaday.component.Component`
+
+
+   LionInputTelDropdown renders a dropdown like element next to the text field, inside the prefix slot. This could be a LionSelect, a LionSelectRich or a native select. By default, the native `<select>` element is used for this, so that it's as lightweight as possible. Also, it doesn't need to be a `FormControl`, because it's purely a helper element to provide better UX: the modelValue (the text field) contains all needed info, since it's in `e164` format that contains all info (both region code and national phone number).
+
+
+   .. py:attribute:: tag
+      :value: 'lion-input-tel-dropdown'
+
+
+
+   .. py:attribute:: schema
+
+
 .. py:class:: LionInputTel(*children: spaday.component.Child, key: str | None = None, allowedRegions: Any = None, format_strategy: Any = None, format_country_code_style: str | None = None, activeRegion: str | None = None, preferredRegions: Any = None, _phoneUtil: Any = None, autocomplete: str | None = None, focused: bool | None = None, focused_visible: bool | None = None, autofocus: bool | None = None, readonly: bool | None = None, label: str | None = None, label_sr_only: bool | None = None, help_text: str | None = None, type: str | None = None, placeholder: str | None = None, name: str | None = None, allow_cross_root_registration: bool | None = None, disabled: bool | None = None, touched: bool | None = None, dirty: bool | None = None, filled: bool | None = None, shows_feedback_for: Any = None, is_pending: bool | None = None, **props: Any)
 
    Bases: :py:obj:`spaday.component.Component`
@@ -560,16 +588,16 @@ Package Contents
    .. py:attribute:: schema
 
 
-.. py:class:: LionInputTelDropdown(*children: spaday.component.Child, key: str | None = None, allowedRegions: Any = None, format_strategy: Any = None, format_country_code_style: str | None = None, activeRegion: str | None = None, preferredRegions: Any = None, _phoneUtil: Any = None, autocomplete: str | None = None, focused: bool | None = None, focused_visible: bool | None = None, autofocus: bool | None = None, readonly: bool | None = None, label: str | None = None, label_sr_only: bool | None = None, help_text: str | None = None, type: str | None = None, placeholder: str | None = None, name: str | None = None, allow_cross_root_registration: bool | None = None, disabled: bool | None = None, touched: bool | None = None, dirty: bool | None = None, filled: bool | None = None, shows_feedback_for: Any = None, is_pending: bool | None = None, **props: Any)
+.. py:class:: LionInput(*children: spaday.component.Child, key: str | None = None, readonly: bool | None = None, type: str | None = None, placeholder: str | None = None, autocomplete: str | None = None, focused: bool | None = None, focused_visible: bool | None = None, autofocus: bool | None = None, label: str | None = None, label_sr_only: bool | None = None, help_text: str | None = None, name: str | None = None, allow_cross_root_registration: bool | None = None, disabled: bool | None = None, touched: bool | None = None, dirty: bool | None = None, filled: bool | None = None, shows_feedback_for: Any = None, is_pending: bool | None = None, **props: Any)
 
    Bases: :py:obj:`spaday.component.Component`
 
 
-   LionInputTelDropdown renders a dropdown like element next to the text field, inside the prefix slot. This could be a LionSelect, a LionSelectRich or a native select. By default, the native `<select>` element is used for this, so that it's as lightweight as possible. Also, it doesn't need to be a `FormControl`, because it's purely a helper element to provide better UX: the modelValue (the text field) contains all needed info, since it's in `e164` format that contains all info (both region code and national phone number).
+   LionInput: extension of lion-field with native input element in place and user friendly API.
 
 
    .. py:attribute:: tag
-      :value: 'lion-input-tel-dropdown'
+      :value: 'lion-input'
 
 
 
@@ -663,22 +691,6 @@ Package Contents
    .. py:attribute:: schema
 
 
-.. py:class:: LionRadio(*children: spaday.component.Child, key: str | None = None, checked: bool | None = None, disabled: bool | None = None, modelValue: Any = None, choiceValue: Any = None, autocomplete: str | None = None, focused: bool | None = None, focused_visible: bool | None = None, autofocus: bool | None = None, readonly: bool | None = None, label: str | None = None, label_sr_only: bool | None = None, help_text: str | None = None, type: str | None = None, placeholder: str | None = None, name: str | None = None, allow_cross_root_registration: bool | None = None, touched: bool | None = None, dirty: bool | None = None, filled: bool | None = None, shows_feedback_for: Any = None, is_pending: bool | None = None, **props: Any)
-
-   Bases: :py:obj:`spaday.component.Component`
-
-
-   Lion-radio can be used inside a lion-radio-group. <lion-radio-group name="radios"> <label slot="label">My Radio</label> <lion-radio> <label slot="label">Male</label> </lion-radio> <lion-radio> <label slot="label">Female</label> </lion-radio> </lion-radio-group> You can preselect an option by setting marking an lion-radio checked. Example: <lion-radio checked>
-
-
-   .. py:attribute:: tag
-      :value: 'lion-radio'
-
-
-
-   .. py:attribute:: schema
-
-
 .. py:class:: LionRadioGroup(*children: spaday.component.Child, key: str | None = None, multiple_choice: bool | None = None, _isFormOrFieldset: bool | None = None, shows_feedback_for: Any = None, is_pending: bool | None = None, touched: bool | None = None, dirty: bool | None = None, filled: bool | None = None, submitted: bool | None = None, focused: bool | None = None, prefilled: bool | None = None, readonly: bool | None = None, label: str | None = None, label_sr_only: bool | None = None, help_text: str | None = None, disabled: bool | None = None, name: str | None = None, allow_cross_root_registration: bool | None = None, **props: Any)
 
    Bases: :py:obj:`spaday.component.Component`
@@ -695,32 +707,16 @@ Package Contents
    .. py:attribute:: schema
 
 
-.. py:class:: LionSelect(*children: spaday.component.Child, key: str | None = None, autocomplete: str | None = None, readonly: bool | None = None, label: str | None = None, label_sr_only: bool | None = None, help_text: str | None = None, name: str | None = None, allow_cross_root_registration: bool | None = None, disabled: bool | None = None, touched: bool | None = None, dirty: bool | None = None, filled: bool | None = None, focused: bool | None = None, focused_visible: bool | None = None, autofocus: bool | None = None, shows_feedback_for: Any = None, is_pending: bool | None = None, **props: Any)
+.. py:class:: LionRadio(*children: spaday.component.Child, key: str | None = None, checked: bool | None = None, disabled: bool | None = None, modelValue: Any = None, choiceValue: Any = None, autocomplete: str | None = None, focused: bool | None = None, focused_visible: bool | None = None, autofocus: bool | None = None, readonly: bool | None = None, label: str | None = None, label_sr_only: bool | None = None, help_text: str | None = None, type: str | None = None, placeholder: str | None = None, name: str | None = None, allow_cross_root_registration: bool | None = None, touched: bool | None = None, dirty: bool | None = None, filled: bool | None = None, shows_feedback_for: Any = None, is_pending: bool | None = None, **props: Any)
 
    Bases: :py:obj:`spaday.component.Component`
 
 
-   LionSelect: wraps the native HTML element select <lion-select> <label slot="label">My Input</label> <select slot="input"> <option value="top">top</option> <option value="bottom">bottom</option> </select> </lion-select> You can preselect an option by setting the property modelValue. Example: <lion-select .modelValue="${'<value of option 2>'}"> It extends LionField so it inherits required and disabled. The option element needs to be a direct child of the select element. You cannot use interactive elements inside the options. Avoid very long names to facilitate the understandability and perceivability for screen reader users. Sets of options where each option name starts with the same word or phrase can also significantly degrade usability for keyboard and screen reader users.
+   Lion-radio can be used inside a lion-radio-group. <lion-radio-group name="radios"> <label slot="label">My Radio</label> <lion-radio> <label slot="label">Male</label> </lion-radio> <lion-radio> <label slot="label">Female</label> </lion-radio> </lion-radio-group> You can preselect an option by setting marking an lion-radio checked. Example: <lion-radio checked>
 
 
    .. py:attribute:: tag
-      :value: 'lion-select'
-
-
-
-   .. py:attribute:: schema
-
-
-.. py:class:: LionSelectInvoker(*children: spaday.component.Child, key: str | None = None, selectedElement: Any = None, hostElement: Any = None, readonly: bool | None = None, single_option: bool | None = None, tabindex: float | None = None, disabled: bool | None = None, active: bool | None = None, type: str | None = None, **props: Any)
-
-   Bases: :py:obj:`spaday.component.Component`
-
-
-   LionSelectInvoker: invoker button consuming a selected element
-
-
-   .. py:attribute:: tag
-      :value: 'lion-select-invoker'
+      :value: 'lion-radio'
 
 
 
@@ -743,39 +739,32 @@ Package Contents
    .. py:attribute:: schema
 
 
-.. py:class:: LionSelectedFileList(*children: spaday.component.Child, key: str | None = None, fileList: Any = None, multiple: bool | None = None, **props: Any)
+.. py:class:: LionSelectInvoker(*children: spaday.component.Child, key: str | None = None, selectedElement: Any = None, hostElement: Any = None, readonly: bool | None = None, single_option: bool | None = None, tabindex: float | None = None, disabled: bool | None = None, active: bool | None = None, type: str | None = None, **props: Any)
 
    Bases: :py:obj:`spaday.component.Component`
 
 
-   Base for a node in the spaday component tree.
-
-   Author it two equivalent ways: nest children **positionally** in the constructor and set generic
-   props as keywords — ``App(Nav("title"), Body(...), id="root")`` — or build it up fluently with
-   ``.child()`` / ``.prop()``. A string child becomes a text node. Subclasses set the class attribute
-   ``tag`` and forward their typed props via ``props=`` (only the ones the author set — ``None`` means
-   "leave the element's own default"). CEM-generated subclasses also set the class-level ``schema``
-   used by component catalogs; hand-authored catalog components may set it explicitly.
+   LionSelectInvoker: invoker button consuming a selected element
 
 
    .. py:attribute:: tag
-      :value: 'lion-selected-file-list'
+      :value: 'lion-select-invoker'
 
 
 
    .. py:attribute:: schema
 
 
-.. py:class:: LionStep(*children: spaday.component.Child, key: str | None = None, status: str | None = None, invert_condition: bool | None = None, forward_only: bool | None = None, initial_step: bool | None = None, **props: Any)
+.. py:class:: LionSelect(*children: spaday.component.Child, key: str | None = None, autocomplete: str | None = None, readonly: bool | None = None, label: str | None = None, label_sr_only: bool | None = None, help_text: str | None = None, name: str | None = None, allow_cross_root_registration: bool | None = None, disabled: bool | None = None, touched: bool | None = None, dirty: bool | None = None, filled: bool | None = None, focused: bool | None = None, focused_visible: bool | None = None, autofocus: bool | None = None, shows_feedback_for: Any = None, is_pending: bool | None = None, **props: Any)
 
    Bases: :py:obj:`spaday.component.Component`
 
 
-   `LionStep` is one of many in a LionSteps Controller
+   LionSelect: wraps the native HTML element select <lion-select> <label slot="label">My Input</label> <select slot="input"> <option value="top">top</option> <option value="bottom">bottom</option> </select> </lion-select> You can preselect an option by setting the property modelValue. Example: <lion-select .modelValue="${'<value of option 2>'}"> It extends LionField so it inherits required and disabled. The option element needs to be a direct child of the select element. You cannot use interactive elements inside the options. Avoid very long names to facilitate the understandability and perceivability for screen reader users. Sets of options where each option name starts with the same word or phrase can also significantly degrade usability for keyboard and screen reader users.
 
 
    .. py:attribute:: tag
-      :value: 'lion-step'
+      :value: 'lion-select'
 
 
 
@@ -792,6 +781,22 @@ Package Contents
 
    .. py:attribute:: tag
       :value: 'lion-steps'
+
+
+
+   .. py:attribute:: schema
+
+
+.. py:class:: LionStep(*children: spaday.component.Child, key: str | None = None, status: str | None = None, invert_condition: bool | None = None, forward_only: bool | None = None, initial_step: bool | None = None, **props: Any)
+
+   Bases: :py:obj:`spaday.component.Component`
+
+
+   `LionStep` is one of many in a LionSteps Controller
+
+
+   .. py:attribute:: tag
+      :value: 'lion-step'
 
 
 
@@ -891,32 +896,4 @@ Package Contents
 
    .. py:attribute:: schema
 
-
-.. py:class:: LionValidationFeedback(*children: spaday.component.Child, key: str | None = None, **props: Any)
-
-   Bases: :py:obj:`spaday.component.Component`
-
-
-   Base for a node in the spaday component tree.
-
-   Author it two equivalent ways: nest children **positionally** in the constructor and set generic
-   props as keywords — ``App(Nav("title"), Body(...), id="root")`` — or build it up fluently with
-   ``.child()`` / ``.prop()``. A string child becomes a text node. Subclasses set the class attribute
-   ``tag`` and forward their typed props via ``props=`` (only the ones the author set — ``None`` means
-   "leave the element's own default"). CEM-generated subclasses also set the class-level ``schema``
-   used by component catalogs; hand-authored catalog components may set it explicitly.
-
-
-   .. py:attribute:: tag
-      :value: 'lion-validation-feedback'
-
-
-
-   .. py:attribute:: schema
-
-
-.. py:data:: package
-
-.. py:data:: TOKENS
-   :type:  dict[str, tuple[str, str]]
 
