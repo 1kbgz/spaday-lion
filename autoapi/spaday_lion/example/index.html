@@ -3,7 +3,7 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../../../genindex.html"><link rel="search" title="Search" href="../../../search.html"><link rel="next" title="integration" href="../../integration/index.html"><link rel="prev" title="spaday_lion.components" href="../components/index.html">
+<link rel="index" title="Index" href="../../../genindex.html"><link rel="search" title="Search" href="../../../search.html"><link rel="next" title="spaday_lion.gallery" href="../gallery/index.html"><link rel="prev" title="spaday_lion.components" href="../components/index.html">
 
     <!-- Generated with Sphinx 8.2.3 and Furo 2025.12.19 -->
         <title>spaday_lion.example - spaday-lion v0.1.0</title>
@@ -203,10 +203,12 @@
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../index.html">spaday_lion</a><input aria-label="Toggle navigation of spaday_lion" checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../components/index.html">spaday_lion.components</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">spaday_lion.example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gallery/index.html">spaday_lion.gallery</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../integration/index.html">integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../test_example/index.html">test_example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../test_gallery/index.html">test_gallery</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../test_versions/index.html">test_versions</a></li>
 </ul>
 </li>
@@ -300,7 +302,10 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#spaday_lion.example.styles" title="spaday_lion.example.styles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">styles</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#spaday_lion.example.app" title="spaday_lion.example.app"><code class="xref py py-obj docutils literal notranslate"><span class="pre">app</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#spaday_lion.example.initial_store" title="spaday_lion.example.initial_store"><code class="xref py py-obj docutils literal notranslate"><span class="pre">initial_store</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#spaday_lion.example.app" title="spaday_lion.example.app"><code class="xref py py-obj docutils literal notranslate"><span class="pre">app</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -619,27 +624,39 @@ validated to form a valid model.</p>
 <span class="sig-prename descclassname"><span class="pre">spaday_lion.example.</span></span><span class="sig-name descname"><span class="pre">styles</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Multiline-String</span></em><a class="headerlink" href="#spaday_lion.example.styles" title="Link to this definition">¶</a></dt>
 <dd><details><summary>Show Value</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">"""</span>
 <span class="sd">&lt;style&gt;</span>
-<span class="sd">  :root { --surface: var(--spa-surface, #fff); --surface-2: var(--spa-surface-2, #fafafa); --border: var(--spa-border, #e6e6e6);</span>
-<span class="sd">    --muted: var(--spa-muted, #666); --accent: var(--spa-accent, #4a90d9); --success: var(--spa-success, #2e7d32); }</span>
+<span class="sd">  :root { --surface: var(--spa-surface, #fff); --surface-2: var(--spa-surface-2, #f4f7f5); --border: var(--spa-border, #dce3de);</span>
+<span class="sd">    --muted: var(--spa-muted, #63706a); --accent: var(--spa-accent, #176b51); --success: var(--spa-success, #2e7d32); }</span>
 <span class="sd">  .wa-dark { color-scheme: dark; }</span>
-<span class="sd">  body { margin: 0; font: 15px/1.45 system-ui, sans-serif; background: var(--surface-2); color: CanvasText; }</span>
-<span class="sd">  spa-nav { justify-content: space-between; }</span>
-<span class="sd">  .brand { font-size: 1.05rem; }</span>
-<span class="sd">  .page { box-sizing: border-box; width: 100%; max-width: 70rem; margin: 0 auto; padding: 1.5rem 1rem; display: grid;</span>
-<span class="sd">    grid-template-columns: minmax(0, 1fr); align-content: start; gap: 1rem; }</span>
+<span class="sd">  body { margin: 0; font: 15px/1.5 Inter, ui-sans-serif, system-ui, sans-serif;</span>
+<span class="sd">    background: radial-gradient(circle at 10% 0, color-mix(in srgb, var(--accent) 14%, transparent), transparent 32rem), var(--surface-2);</span>
+<span class="sd">    color: CanvasText; }</span>
+<span class="sd">  spa-nav { justify-content: space-between; border-bottom: 1px solid var(--border); background: color-mix(in srgb, var(--surface) 88%, transparent);</span>
+<span class="sd">    backdrop-filter: blur(14px); }</span>
+<span class="sd">  .brand { font-size: 1.05rem; letter-spacing: -.015em; }</span>
+<span class="sd">  .page { box-sizing: border-box; width: 100%; max-width: 78rem; margin: 0 auto; padding: 3.5rem 1.25rem 5rem; display: grid;</span>
+<span class="sd">    grid-template-columns: minmax(0, 1fr); align-content: start; gap: 1.2rem; }</span>
+<span class="sd">  .hero { padding: 1rem 0 1.35rem; }</span>
+<span class="sd">  .eyebrow { margin: 0; color: var(--accent); font-size: .72rem; font-weight: 800; letter-spacing: .16em; }</span>
+<span class="sd">  .hero h1 { margin: .35rem 0 0; font-size: clamp(2.6rem, 6vw, 4.9rem); line-height: .98; letter-spacing: -.055em; }</span>
 <span class="sd">  .lede, .muted, .stat-label { color: var(--muted); }</span>
-<span class="sd">  .lede { margin: 0; }</span>
+<span class="sd">  .lede { max-width: 48rem; margin: 1rem 0; font-size: 1.08rem; line-height: 1.6; }</span>
+<span class="sd">  .hero-meta { display: flex; flex-wrap: wrap; gap: .55rem; }</span>
+<span class="sd">  .hero-meta span { padding: .42rem .7rem; border: 1px solid var(--border); border-radius: 999px;</span>
+<span class="sd">    background: color-mix(in srgb, var(--surface) 90%, transparent); font-size: .85rem; }</span>
 <span class="sd">  .stats { flex-wrap: wrap; }</span>
-<span class="sd">  .stat { flex: 1 1 12rem; display: grid; gap: .35rem; padding: 1rem; border: 1px solid var(--border); border-radius: .75rem; background: var(--surface); }</span>
-<span class="sd">  .stat strong { font-size: 1.75rem; }</span>
+<span class="sd">  .stat { flex: 1 1 14rem; display: grid; align-content: start; gap: .5rem; padding: 1.15rem; border: 1px solid var(--border);</span>
+<span class="sd">    border-radius: 1rem; background: var(--surface); box-shadow: 0 12px 35px rgb(23 35 31 / .06); }</span>
+<span class="sd">  .stat strong { font-size: 1.8rem; letter-spacing: -.035em; }</span>
 <span class="sd">  /* Lion's progress indicator draws nothing of its own; the page draws it from the value it is given */</span>
 <span class="sd">  lion-progress-indicator { display: block; height: .5rem; border-radius: .25rem;</span>
 <span class="sd">    background: linear-gradient(to right, var(--accent) var(--progress, 0%), var(--border) 0); }</span>
 <span class="sd">  lion-switch [slot="label"] { margin-inline-end: .5rem; }</span>
-<span class="sd">  lion-tabs &gt; [slot="tab"] { font: inherit; padding: .5rem 1rem; border: 0; border-bottom: 2px solid transparent; background: none;</span>
+<span class="sd">  lion-tabs { display: block; min-width: 0; padding: .6rem 1.15rem 1.25rem; border: 1px solid var(--border); border-radius: 1rem;</span>
+<span class="sd">    background: var(--surface); box-shadow: 0 18px 45px rgb(23 35 31 / .07); }</span>
+<span class="sd">  lion-tabs &gt; [slot="tab"] { font: inherit; padding: .65rem 1rem; border: 0; border-bottom: 2px solid transparent; background: none;</span>
 <span class="sd">    color: var(--muted); cursor: pointer; }</span>
 <span class="sd">  lion-tabs &gt; [slot="tab"][selected] { color: CanvasText; border-bottom-color: var(--accent); }</span>
-<span class="sd">  .panel { padding-top: 1rem; }</span>
+<span class="sd">  .panel { min-width: 0; padding-top: 1.25rem; }</span>
 <span class="sd">  .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 1.5rem; }</span>
 <span class="sd">  .form-grid .wide { grid-column: 1 / -1; }</span>
 <span class="sd">  .form-grid input, .form-grid textarea, lion-select-rich lion-select-invoker, lion-combobox input {</span>
@@ -656,14 +673,15 @@ validated to form a valid model.</p>
 <span class="sd">  /* Lion's switch keeps its track and thumb in its own shadow root; round off the host */</span>
 <span class="sd">  lion-switch-button { border-radius: 999px; overflow: hidden; box-shadow: inset 0 0 0 1px var(--border); }</span>
 <span class="sd">  lion-switch-button[checked] { box-shadow: 0 0 0 2px var(--accent); }</span>
-<span class="sd">  lion-button, lion-button-submit, lion-button-reset { padding: .5rem 1rem; border-radius: .5rem; border: 1px solid var(--border);</span>
-<span class="sd">    background: var(--surface); color: CanvasText; cursor: pointer; }</span>
+<span class="sd">  lion-button, lion-button-submit, lion-button-reset { padding: .55rem 1rem; border-radius: .55rem; border: 1px solid var(--border);</span>
+<span class="sd">    background: var(--surface); color: CanvasText; cursor: pointer; transition: transform .15s ease, box-shadow .15s ease; }</span>
+<span class="sd">  lion-button:hover, lion-button-submit:hover, lion-button-reset:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgb(23 35 31 / .1); }</span>
 <span class="sd">  lion-button-submit { background: var(--accent); color: #fff; border-color: transparent; }</span>
 <span class="sd">  lion-button[disabled] { opacity: .5; cursor: default; }</span>
 <span class="sd">  .queue { display: grid; gap: .5rem; }</span>
-<span class="sd">  .application { display: grid; grid-template-columns: minmax(0, 1fr) 10rem 6rem auto; align-items: center; gap: 1rem; padding: .75rem 1rem;</span>
-<span class="sd">    border: 1px solid var(--border); border-radius: .75rem; background: var(--surface); }</span>
-<span class="sd">  .application-main { display: grid; }</span>
+<span class="sd">  .application { display: grid; grid-template-columns: minmax(0, 1fr) 10rem 6rem auto; align-items: center; gap: 1rem; padding: .85rem 1rem;</span>
+<span class="sd">    border: 1px solid var(--border); border-radius: .75rem; background: color-mix(in srgb, var(--surface) 94%, var(--surface-2)); }</span>
+<span class="sd">  .application-main { display: grid; min-width: 0; }</span>
 <span class="sd">  .status[data-status="Approved"] { color: var(--success); font-weight: 600; }</span>
 <span class="sd">  .help { display: grid; gap: 1rem; }</span>
 <span class="sd">  .accordion-invoker, .link { font: inherit; background: none; border: 0; padding: .5rem 0; color: var(--accent); cursor: pointer; }</span>
@@ -673,6 +691,9 @@ validated to form a valid model.</p>
 <span class="sd">  .dialog h2 { margin-top: 0; }</span>
 <span class="sd">  #confirm-close { font: inherit; padding: .4rem 1rem; border-radius: .5rem; border: 0; background: var(--accent); color: #fff; }</span>
 <span class="sd">  @media (max-width: 720px) {</span>
+<span class="sd">    .page { padding: 2rem .75rem 3rem; }</span>
+<span class="sd">    .hero { padding-top: .5rem; }</span>
+<span class="sd">    lion-tabs { padding-inline: .75rem; }</span>
 <span class="sd">    .form-grid { grid-template-columns: 1fr; }</span>
 <span class="sd">    .application { grid-template-columns: 1fr auto; }</span>
 <span class="sd">    .application lion-progress-indicator { grid-column: 1 / -1; }</span>
@@ -682,6 +703,11 @@ validated to form a valid model.</p>
 </pre></div>
 </div>
 </details></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="spaday_lion.example.initial_store">
+<span class="sig-prename descclassname"><span class="pre">spaday_lion.example.</span></span><span class="sig-name descname"><span class="pre">initial_store</span></span><a class="headerlink" href="#spaday_lion.example.initial_store" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="spaday_lion.example.app">
@@ -696,12 +722,12 @@ validated to form a valid model.</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../../integration/index.html">
+          <a class="next-page" href="../gallery/index.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">integration</div>
+                <div class="title">spaday_lion.gallery</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -799,6 +825,7 @@ validated to form a valid model.</p>
 <li><a class="reference internal" href="#spaday_lion.example.confirm"><code class="docutils literal notranslate"><span class="pre">confirm</span></code></a></li>
 <li><a class="reference internal" href="#spaday_lion.example.page"><code class="docutils literal notranslate"><span class="pre">page</span></code></a></li>
 <li><a class="reference internal" href="#spaday_lion.example.styles"><code class="docutils literal notranslate"><span class="pre">styles</span></code></a></li>
+<li><a class="reference internal" href="#spaday_lion.example.initial_store"><code class="docutils literal notranslate"><span class="pre">initial_store</span></code></a></li>
 <li><a class="reference internal" href="#spaday_lion.example.app"><code class="docutils literal notranslate"><span class="pre">app</span></code></a></li>
 </ul>
 </li>

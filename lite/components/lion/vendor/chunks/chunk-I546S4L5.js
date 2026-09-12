@@ -1,0 +1,1 @@
+var e={back:"\u041D\u0430\u0437\u0430\u0434",close:"\u0417\u0430\u043A\u0440\u0438\u0442\u0438"};export{e as a};

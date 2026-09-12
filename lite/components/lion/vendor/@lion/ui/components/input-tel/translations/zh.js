@@ -1,0 +1,1 @@
+var e={allCountries:"\u6240\u6709\u56FD\u5BB6/\u5730\u533A",phoneNumber:"\u7535\u8BDD\u53F7\u7801",selectCountry:"\u9009\u62E9\u56FD\u5BB6/\u5730\u533A",suggestedCountries:"\u5EFA\u8BAE\u7684\u56FD\u5BB6/\u5730\u533A"};export{e as default};

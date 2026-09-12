@@ -1,0 +1,1 @@
+import{L as t}from"./chunk-EPIRVTM2.js";import{d as o}from"./chunk-TIEK7LWH.js";var r=class extends t(o){constructor(){super(),this._isFormOrFieldset=!0,this._repropagationRole="fieldset"}};export{r as a};

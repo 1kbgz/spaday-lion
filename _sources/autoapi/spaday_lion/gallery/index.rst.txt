@@ -1,0 +1,169 @@
+spaday_lion.gallery
+===================
+
+.. py:module:: spaday_lion.gallery
+
+.. autoapi-nested-parse::
+
+   Gallery of every Lion component wrapped by spaday-lion.
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   spaday_lion.gallery.COMPONENT_SNIPPETS
+   spaday_lion.gallery.buttons
+   spaday_lion.gallery.text_inputs
+   spaday_lion.gallery.numbers_dates
+   spaday_lion.gallery.selection
+   spaday_lion.gallery.navigation
+   spaday_lion.gallery.overlays
+   spaday_lion.gallery.page
+   spaday_lion.gallery.styles
+   spaday_lion.gallery.app
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   spaday_lion.gallery._snippet
+   spaday_lion.gallery._offsets
+   spaday_lion.gallery._code
+   spaday_lion.gallery._demo
+   spaday_lion.gallery._section
+
+
+Module Contents
+---------------
+
+.. py:data:: COMPONENT_SNIPPETS
+   :type:  list[str]
+   :value: []
+
+
+.. py:function:: _snippet(names: str, body: str) -> str
+
+.. py:function:: _offsets(source: str) -> list[int]
+
+.. py:function:: _code(source: str)
+
+   Render dependency-free highlighted Python.
+
+
+.. py:function:: _demo(title: str, description: str, source: str, preview)
+
+.. py:function:: _section(section_id: str, title: str, description: str, *cards)
+
+.. py:data:: buttons
+
+.. py:data:: text_inputs
+
+.. py:data:: numbers_dates
+
+.. py:data:: selection
+
+.. py:data:: navigation
+
+.. py:data:: overlays
+
+.. py:data:: page
+
+.. py:data:: styles
+   :value: Multiline-String
+
+   .. raw:: html
+
+      <details><summary>Show Value</summary>
+
+   .. code-block:: python
+
+      """
+      <style>
+        :root { --ink: #17231f; --muted: #65716c; --surface: #fff; --surface-2: #f5f7f4; --border: #dce3de;
+          --accent: #176b51; --accent-soft: #dff3e9; --shadow: 0 18px 50px rgb(23 35 31 / .08); color-scheme: light; }
+        html { scroll-behavior: smooth; }
+        body { margin: 0; color: var(--ink); background: radial-gradient(circle at 10% 0, #dff3e9 0, transparent 31rem), var(--surface-2);
+          font: 15px/1.5 Inter, ui-sans-serif, system-ui, sans-serif; }
+        .gallery-page { box-sizing: border-box; width: min(100%, 92rem); margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+        .hero { padding: 2rem 0 1rem; }
+        .eyebrow, .section-label { margin: 0; color: var(--accent); font-size: .72rem; font-weight: 800; letter-spacing: .16em; }
+        h1 { margin: .35rem 0 0; font-size: clamp(2.5rem, 6vw, 4.8rem); letter-spacing: -.055em; line-height: .98; }
+        .lede { max-width: 50rem; margin: 1rem 0 1.5rem; color: var(--muted); font-size: 1.08rem; line-height: 1.6; }
+        .section-nav { display: flex; flex-wrap: wrap; gap: .5rem; }
+        .section-nav a { padding: .45rem .75rem; border: 1px solid var(--border); border-radius: 999px; color: var(--ink); text-decoration: none;
+          background: rgb(255 255 255 / .82); }
+        .section-nav a:hover { border-color: var(--accent); color: var(--accent); }
+        .gallery-section { scroll-margin-top: 4rem; padding: 3rem 0 1rem; }
+        .gallery-section > header { max-width: 46rem; margin-bottom: 1.25rem; }
+        .gallery-section h2 { margin: .3rem 0 .4rem; font-size: 2rem; letter-spacing: -.03em; }
+        .gallery-section > header > p:last-child { margin: 0; color: var(--muted); }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 27rem), 1fr)); gap: 1rem; align-items: start; }
+        .gallery-card { min-width: 0; padding: 1.15rem; border: 1px solid var(--border); border-radius: 1rem; background: var(--surface); box-shadow: var(--shadow); }
+        .demo-heading { display: flex; align-items: start; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+        .demo-heading > div { min-width: 0; }
+        .demo-heading h3 { margin: 0; font-size: 1.05rem; }
+        .demo-heading p { margin: .3rem 0 0; color: var(--muted); font-size: .88rem; line-height: 1.45; }
+        .language-pill { flex: 0 0 auto; padding: .25rem .5rem; border-radius: 999px; color: var(--accent); background: var(--accent-soft);
+          font-size: .72rem; font-weight: 750; }
+        .preview { box-sizing: border-box; min-height: 9rem; margin-bottom: 1rem; padding: 1.25rem; overflow: auto; border: 1px solid var(--border);
+          border-radius: .75rem; background: #fafcf9; }
+        .preview > * { max-width: 100%; }
+        .source { min-width: 0; }
+        .code-block { box-sizing: border-box; max-height: 19rem; margin: 0; padding: 1rem; overflow: auto; border-radius: .75rem; color: #dbeafe;
+          background: #17231f; font: .78rem/1.6 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; tab-size: 4; white-space: pre; }
+        .token-keyword { color: #c4b5fd; } .token-string { color: #86efac; } .token-number { color: #fcd34d; }
+        .token-comment { color: #94a3b8; font-style: italic; } .token-operator { color: #7dd3fc; }
+        .inline-preview { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; }
+        .stack, .form-preview { display: grid; gap: .9rem; }
+        .switch-row, .icon-row { display: flex; align-items: center; gap: .6rem; }
+        .icon-row lion-icon { width: 1.25rem; height: 1.25rem; border: 2px solid var(--accent); border-radius: .3rem; }
+        lion-button, lion-button-submit, lion-button-reset, .primary-button, .secondary-button { box-sizing: border-box; padding: .55rem .9rem; border: 1px solid var(--border);
+          border-radius: .55rem; color: var(--ink); background: var(--surface); font: inherit; cursor: pointer; }
+        lion-button-submit, .primary-button { border-color: var(--accent); color: #fff; background: var(--accent); }
+        lion-switch-button { border-radius: 999px; overflow: hidden; box-shadow: inset 0 0 0 1px var(--border); }
+        lion-switch-button[checked] { box-shadow: 0 0 0 2px var(--accent); }
+        lion-input input, lion-input-email input, lion-input-tel input, lion-input-tel-dropdown input, lion-textarea textarea, lion-field input,
+        lion-input-amount input, lion-input-amount-dropdown input, lion-input-date input, lion-input-datepicker input, lion-input-iban input,
+        lion-select select, lion-select-rich lion-select-invoker, lion-combobox input, lion-input-file input { box-sizing: border-box; width: 100%; padding: .55rem .65rem;
+          border: 1px solid var(--border); border-radius: .5rem; color: var(--ink); background: var(--surface); font: inherit; }
+        [slot="label"], .form-preview label { font-weight: 650; }
+        [slot="help-text"] { color: var(--muted); font-size: .85rem; }
+        lion-checkbox, lion-radio { display: block; margin-block: .35rem; }
+        lion-progress-indicator { display: block; height: .55rem; border-radius: 999px;
+          background: linear-gradient(to right, var(--accent) var(--progress, 0%), var(--border) 0); }
+        lion-pagination { --pagination-color: var(--accent); }
+        lion-tabs > [slot="tab"] { padding: .45rem .75rem; border: 0; border-bottom: 2px solid transparent; color: var(--muted); background: none; font: inherit; }
+        lion-tabs > [slot="tab"][selected] { border-bottom-color: var(--accent); color: var(--ink); }
+        lion-tabs > [slot="panel"] { padding-top: .75rem; }
+        .link-button { padding: .35rem 0; border: 0; color: var(--accent); background: none; font: inherit; cursor: pointer; }
+        .primitive-row { display: flex; gap: .75rem; align-items: center; padding: .75rem; border: 1px dashed var(--border); border-radius: .5rem; }
+        .options-preview > * { padding: .45rem .65rem; border-radius: .4rem; }
+        .options-preview > *:first-child { color: var(--accent); background: var(--accent-soft); }
+        .steps-preview { display: flex; flex-wrap: wrap; gap: .6rem; }
+        .steps-preview lion-step { padding: .45rem .65rem; border: 1px solid var(--border); border-radius: 999px; }
+        .steps-preview lion-step[status="entered"] { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+        .hint { width: 2rem; height: 2rem; border: 1px solid var(--border); border-radius: 50%; color: var(--accent); background: var(--surface); }
+        .tooltip-card { display: block; padding: .45rem .65rem; border-radius: .45rem; color: #fff; background: var(--ink); }
+        .overlay-card { max-width: 26rem; padding: 1.25rem; border-radius: .8rem; background: var(--surface); box-shadow: 0 24px 70px rgb(0 0 0 / .22); }
+        .overlay-card h4, .drawer-card h4 { margin-top: 0; }
+        .drawer-card { box-sizing: border-box; width: min(24rem, 90vw); min-height: 100vh; padding: 1.5rem; background: var(--surface); box-shadow: -20px 0 60px rgb(0 0 0 / .16); }
+        .calendar-preview lion-calendar { max-width: 22rem; }
+        footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .85rem; }
+        @media (max-width: 600px) { .gallery-page { padding-inline: .75rem; } .gallery-section { padding-top: 2rem; } .preview { padding: .9rem; }
+          .calendar-preview lion-calendar { zoom: .8; } }
+      </style>
+      """
+
+   .. raw:: html
+
+      </details>
+
+
+
+.. py:data:: app
+

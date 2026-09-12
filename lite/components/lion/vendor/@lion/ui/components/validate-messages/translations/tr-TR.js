@@ -1,0 +1,1 @@
+import{a as r}from"../../../../../chunks/chunk-NSSXKBCW.js";var e={...r,error:{...r.error,IsDate:"L\xFCtfen ge\xE7erli bir tarih girin (GG/AA/YYYY)."},warning:{...r.warning,IsDate:"L\xFCtfen ge\xE7erli bir tarih girin (GG/AA/YYYY)."}};export{e as default};

@@ -1,0 +1,1 @@
+var m={minimum:"\u041C\u0438\u043D\u0438\u043C\u0443\u043C",maximum:"\u041C\u0430\u043A\u0441\u0438\u043C\u0443\u043C"};export{m as a};

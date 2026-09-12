@@ -203,10 +203,12 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="autoapi/spaday_lion/index.html">spaday_lion</a><input aria-label="Toggle navigation of spaday_lion" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="autoapi/spaday_lion/components/index.html">spaday_lion.components</a></li>
 <li class="toctree-l3"><a class="reference internal" href="autoapi/spaday_lion/example/index.html">spaday_lion.example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/spaday_lion/gallery/index.html">spaday_lion.gallery</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="autoapi/integration/index.html">integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autoapi/test_example/index.html">test_example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoapi/test_gallery/index.html">test_gallery</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autoapi/test_versions/index.html">test_versions</a></li>
 </ul>
 </li>
@@ -257,7 +259,7 @@
 <a class="reference external" href="https://codecov.io/gh/1kbgz/spaday-lion"><img alt="codecov" src="https://codecov.io/gh/1kbgz/spaday-lion/branch/main/graph/badge.svg" /></a>
 <a class="reference external" href="https://github.com/1kbgz/spaday-lion"><img alt="License" src="https://img.shields.io/github/license/1kbgz/spaday-lion" /></a>
 <a class="reference external" href="https://pypi.python.org/pypi/spaday-lion"><img alt="PyPI" src="https://img.shields.io/pypi/v/spaday-lion.svg" /></a></p>
-<p><a class="reference download internal" download="" href="_downloads/06d135483e3884f679b0d75b0890cab8/example.py"><span class="xref download myst"><img alt="Preview of lion components in spaday rendering a bank account opening page" src="https://raw.githubusercontent.com/1kbgz/spaday-lion/main/docs/img/preview.webp" /></span></a></p>
+<p><a class="reference external" href="https://1kbgz.github.io/spaday-lion/lite/"><img alt="Preview of Lion components in spaday rendering a bank account opening page" src="https://raw.githubusercontent.com/1kbgz/spaday-lion/main/docs/img/preview.webp" /></a></p>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spaday</span><span class="w"> </span><span class="kn">import</span> <span class="n">SetField</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">serve</span>
@@ -276,18 +278,28 @@ including the attributes its form and localization mixins contribute, so props, 
 checked when you author the tree. Installing the package does not inject assets; select it with
 <code class="docutils literal notranslate"><span class="pre">packages=[&quot;lion&quot;]</span></code> or pass the exported <code class="docutils literal notranslate"><span class="pre">package</span></code> descriptor.</p>
 </section>
-<section id="run-the-local-example">
-<h2>Run the local example<a class="headerlink" href="#run-the-local-example" title="Link to this heading">¶</a></h2>
+<section id="browser-examples">
+<h2>Browser examples<a class="headerlink" href="#browser-examples" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://1kbgz.github.io/spaday-lion/lite/">Open the standard app</a> (<a class="reference download internal" download="" href="_downloads/06d135483e3884f679b0d75b0890cab8/example.py"><span class="xref download myst">source</span></a>).</p></li>
+<li><p><a class="reference external" href="https://1kbgz.github.io/spaday-lion/lite/?example=gallery">Open the complete component gallery</a> (<a class="reference download internal" download="" href="_downloads/06c0c24ffefd8a089a22ade594291b96/gallery.py"><span class="xref download myst">source</span></a>).</p></li>
+</ul>
+<p>Both run Python locally through Pyodide; no install or server is required.</p>
+</section>
+<section id="run-examples-locally">
+<h2>Run examples locally<a class="headerlink" href="#run-examples-locally" title="Link to this heading">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[examples]"</span>
 python<span class="w"> </span>-m<span class="w"> </span>spaday_lion.example
+python<span class="w"> </span>-m<span class="w"> </span>spaday_lion.gallery
 </pre></div>
 </div>
-<p>Open <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8025</span></code> for the <a class="reference download internal" download="" href="_downloads/06d135483e3884f679b0d75b0890cab8/example.py"><span class="xref download myst">account opening page</span></a>: a <code class="docutils literal notranslate"><span class="pre">lion-form</span></code> of
-input, email, IBAN, amount, datepicker, rich select, combobox, radio and checkbox groups, range, stepper,
-switch and text area whose <code class="docutils literal notranslate"><span class="pre">serializedValue</span></code> is posted to Python as one request and confirmed in a dialog,
-two-way bindings driving a live preview, a review queue streamed from Python with approvals, tabs, an
-accordion, a collapsible and a tooltip. Lion is white-label, so the page styles the elements from spaday’s
-palette, and its dark switch flips them with the shell.</p>
+<p>Open <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8025</span></code> for the standard account-opening app or <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8026</span></code> for the
+component gallery. The standard app includes a complete <code class="docutils literal notranslate"><span class="pre">lion-form</span></code>, two-way bindings, an endpoint-backed
+submission flow, a review queue streamed from Python, overlays, navigation, and shared dark-theme state.
+The gallery includes every generated Lion component and a highlighted Python snippet for each component
+family.</p>
+<p>Both pass the local package descriptor directly, so they do not install or resolve the integration from
+GitHub.</p>
 </section>
 <section id="theming">
 <h2>Theming<a class="headerlink" href="#theming" title="Link to this heading">¶</a></h2>

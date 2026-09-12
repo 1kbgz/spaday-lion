@@ -1,0 +1,1 @@
+import{a as i}from"./chunk-JI4JQMWL.js";import{x as r}from"./chunk-EPIRVTM2.js";import{j as t}from"./chunk-CHUHNXUY.js";var o=class extends t(i){constructor(){super(),this.autocomplete="email",this.defaultValidators.push(new r)}};export{o as a};

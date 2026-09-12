@@ -1,0 +1,1 @@
+import{a as e}from"../../../../../chunks/chunk-DXC72GAH.js";var r={...e,error:{...e.error,IsDate:"Please enter a valid date (MM/DD/YYYY)."},warning:{...e.warning,IsDate:"Please enter a valid date (MM/DD/YYYY)."}};export{r as default};

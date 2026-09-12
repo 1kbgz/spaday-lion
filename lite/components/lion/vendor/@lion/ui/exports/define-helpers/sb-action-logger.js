@@ -1,0 +1,1 @@
+import{c as o}from"../../../../chunks/chunk-TUXN2UR5.js";import"../../../../chunks/chunk-GNR73WXY.js";import"../../../../chunks/chunk-TIEK7LWH.js";import"../../../../chunks/chunk-2FELQFK7.js";window.customElements.define("sb-action-logger",o);

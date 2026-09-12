@@ -330,8 +330,21 @@ page = App(
     ),
     Body(
         Main(
-            element("p", class_="lede").text(
-                "Lion is white-label: these typed Lion elements take their look from spaday's palette, and the review queue streams from Python."
+            element(
+                "header",
+                element("p", class_="eyebrow").text("LION BANK · PRIVATE CLIENTS"),
+                element("h1").text("Open an account"),
+                element("p", class_="lede").text(
+                    "A complete account journey built with typed Lion elements, live Python state, and a palette designed for calm financial decisions."
+                ),
+                element(
+                    "div",
+                    element("span").text("47 typed elements"),
+                    element("span").text("Live review queue"),
+                    element("span").text("Python endpoints"),
+                    class_="hero-meta",
+                ),
+                class_="hero",
             ),
             stats,
             LionTabs(id="tabs")
@@ -349,27 +362,39 @@ page = App(
 
 styles = """
 <style>
-  :root { --surface: var(--spa-surface, #fff); --surface-2: var(--spa-surface-2, #fafafa); --border: var(--spa-border, #e6e6e6);
-    --muted: var(--spa-muted, #666); --accent: var(--spa-accent, #4a90d9); --success: var(--spa-success, #2e7d32); }
+  :root { --surface: var(--spa-surface, #fff); --surface-2: var(--spa-surface-2, #f4f7f5); --border: var(--spa-border, #dce3de);
+    --muted: var(--spa-muted, #63706a); --accent: var(--spa-accent, #176b51); --success: var(--spa-success, #2e7d32); }
   .wa-dark { color-scheme: dark; }
-  body { margin: 0; font: 15px/1.45 system-ui, sans-serif; background: var(--surface-2); color: CanvasText; }
-  spa-nav { justify-content: space-between; }
-  .brand { font-size: 1.05rem; }
-  .page { box-sizing: border-box; width: 100%; max-width: 70rem; margin: 0 auto; padding: 1.5rem 1rem; display: grid;
-    grid-template-columns: minmax(0, 1fr); align-content: start; gap: 1rem; }
+  body { margin: 0; font: 15px/1.5 Inter, ui-sans-serif, system-ui, sans-serif;
+    background: radial-gradient(circle at 10% 0, color-mix(in srgb, var(--accent) 14%, transparent), transparent 32rem), var(--surface-2);
+    color: CanvasText; }
+  spa-nav { justify-content: space-between; border-bottom: 1px solid var(--border); background: color-mix(in srgb, var(--surface) 88%, transparent);
+    backdrop-filter: blur(14px); }
+  .brand { font-size: 1.05rem; letter-spacing: -.015em; }
+  .page { box-sizing: border-box; width: 100%; max-width: 78rem; margin: 0 auto; padding: 3.5rem 1.25rem 5rem; display: grid;
+    grid-template-columns: minmax(0, 1fr); align-content: start; gap: 1.2rem; }
+  .hero { padding: 1rem 0 1.35rem; }
+  .eyebrow { margin: 0; color: var(--accent); font-size: .72rem; font-weight: 800; letter-spacing: .16em; }
+  .hero h1 { margin: .35rem 0 0; font-size: clamp(2.6rem, 6vw, 4.9rem); line-height: .98; letter-spacing: -.055em; }
   .lede, .muted, .stat-label { color: var(--muted); }
-  .lede { margin: 0; }
+  .lede { max-width: 48rem; margin: 1rem 0; font-size: 1.08rem; line-height: 1.6; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: .55rem; }
+  .hero-meta span { padding: .42rem .7rem; border: 1px solid var(--border); border-radius: 999px;
+    background: color-mix(in srgb, var(--surface) 90%, transparent); font-size: .85rem; }
   .stats { flex-wrap: wrap; }
-  .stat { flex: 1 1 12rem; display: grid; gap: .35rem; padding: 1rem; border: 1px solid var(--border); border-radius: .75rem; background: var(--surface); }
-  .stat strong { font-size: 1.75rem; }
+  .stat { flex: 1 1 14rem; display: grid; align-content: start; gap: .5rem; padding: 1.15rem; border: 1px solid var(--border);
+    border-radius: 1rem; background: var(--surface); box-shadow: 0 12px 35px rgb(23 35 31 / .06); }
+  .stat strong { font-size: 1.8rem; letter-spacing: -.035em; }
   /* Lion's progress indicator draws nothing of its own; the page draws it from the value it is given */
   lion-progress-indicator { display: block; height: .5rem; border-radius: .25rem;
     background: linear-gradient(to right, var(--accent) var(--progress, 0%), var(--border) 0); }
   lion-switch [slot="label"] { margin-inline-end: .5rem; }
-  lion-tabs > [slot="tab"] { font: inherit; padding: .5rem 1rem; border: 0; border-bottom: 2px solid transparent; background: none;
+  lion-tabs { display: block; min-width: 0; padding: .6rem 1.15rem 1.25rem; border: 1px solid var(--border); border-radius: 1rem;
+    background: var(--surface); box-shadow: 0 18px 45px rgb(23 35 31 / .07); }
+  lion-tabs > [slot="tab"] { font: inherit; padding: .65rem 1rem; border: 0; border-bottom: 2px solid transparent; background: none;
     color: var(--muted); cursor: pointer; }
   lion-tabs > [slot="tab"][selected] { color: CanvasText; border-bottom-color: var(--accent); }
-  .panel { padding-top: 1rem; }
+  .panel { min-width: 0; padding-top: 1.25rem; }
   .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 1.5rem; }
   .form-grid .wide { grid-column: 1 / -1; }
   .form-grid input, .form-grid textarea, lion-select-rich lion-select-invoker, lion-combobox input {
@@ -386,14 +411,15 @@ styles = """
   /* Lion's switch keeps its track and thumb in its own shadow root; round off the host */
   lion-switch-button { border-radius: 999px; overflow: hidden; box-shadow: inset 0 0 0 1px var(--border); }
   lion-switch-button[checked] { box-shadow: 0 0 0 2px var(--accent); }
-  lion-button, lion-button-submit, lion-button-reset { padding: .5rem 1rem; border-radius: .5rem; border: 1px solid var(--border);
-    background: var(--surface); color: CanvasText; cursor: pointer; }
+  lion-button, lion-button-submit, lion-button-reset { padding: .55rem 1rem; border-radius: .55rem; border: 1px solid var(--border);
+    background: var(--surface); color: CanvasText; cursor: pointer; transition: transform .15s ease, box-shadow .15s ease; }
+  lion-button:hover, lion-button-submit:hover, lion-button-reset:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgb(23 35 31 / .1); }
   lion-button-submit { background: var(--accent); color: #fff; border-color: transparent; }
   lion-button[disabled] { opacity: .5; cursor: default; }
   .queue { display: grid; gap: .5rem; }
-  .application { display: grid; grid-template-columns: minmax(0, 1fr) 10rem 6rem auto; align-items: center; gap: 1rem; padding: .75rem 1rem;
-    border: 1px solid var(--border); border-radius: .75rem; background: var(--surface); }
-  .application-main { display: grid; }
+  .application { display: grid; grid-template-columns: minmax(0, 1fr) 10rem 6rem auto; align-items: center; gap: 1rem; padding: .85rem 1rem;
+    border: 1px solid var(--border); border-radius: .75rem; background: color-mix(in srgb, var(--surface) 94%, var(--surface-2)); }
+  .application-main { display: grid; min-width: 0; }
   .status[data-status="Approved"] { color: var(--success); font-weight: 600; }
   .help { display: grid; gap: 1rem; }
   .accordion-invoker, .link { font: inherit; background: none; border: 0; padding: .5rem 0; color: var(--accent); cursor: pointer; }
@@ -403,12 +429,26 @@ styles = """
   .dialog h2 { margin-top: 0; }
   #confirm-close { font: inherit; padding: .4rem 1rem; border-radius: .5rem; border: 0; background: var(--accent); color: #fff; }
   @media (max-width: 720px) {
+    .page { padding: 2rem .75rem 3rem; }
+    .hero { padding-top: .5rem; }
+    lion-tabs { padding-inline: .75rem; }
     .form-grid { grid-template-columns: 1fr; }
     .application { grid-template-columns: 1fr auto; }
     .application lion-progress-indicator { grid-column: 1 / -1; }
   }
 </style>
 """
+
+initial_store = {
+    "dark": False,
+    "full_name": "Ada Lovelace",
+    "deposit": 1500,
+    "overdraft": 1000,
+    "cards": 1,
+    "plan": "basic",
+    "submitted": {"body": {"message": ""}},
+    "approved": {},
+}
 
 app = serve(
     page,
@@ -420,16 +460,7 @@ app = serve(
         Route("/api/applications/{id}/approve", approve, methods=["POST"]),
     ],
     background=[transports.autosync(server), review_applications()],
-    store={
-        "dark": False,
-        "full_name": "Ada Lovelace",
-        "deposit": 1500,
-        "overdraft": 1000,
-        "cards": 1,
-        "plan": "basic",
-        "submitted": {"body": {"message": ""}},
-        "approved": {},
-    },
+    store=initial_store,
     head=styles,
     title="spaday-lion example",
 )

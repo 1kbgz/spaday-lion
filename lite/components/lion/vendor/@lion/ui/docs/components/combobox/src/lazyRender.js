@@ -1,0 +1,1 @@
+import{a as r}from"../../../../../../chunks/chunk-RFUIJ2RA.js";import{b as e}from"../../../../../../chunks/chunk-5G3K6R3U.js";import"../../../../../../chunks/chunk-7ONKQLO6.js";import"../../../../../../chunks/chunk-2FELQFK7.js";var p=e(class extends r{render(t){setTimeout(()=>{this.setValue(t)})}});export{p as lazyRender};

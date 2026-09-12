@@ -12,6 +12,7 @@ Submodules
 
    /autoapi/spaday_lion/components/index
    /autoapi/spaday_lion/example/index
+   /autoapi/spaday_lion/gallery/index
 
 
 Attributes
