@@ -7,7 +7,7 @@ Typed [Lion](https://lion.js.org) components and browser assets for [spaday](htt
 [![License](https://img.shields.io/github/license/1kbgz/spaday-lion)](https://github.com/1kbgz/spaday-lion)
 [![PyPI](https://img.shields.io/pypi/v/spaday-lion.svg)](https://pypi.python.org/pypi/spaday-lion)
 
-[![Preview of lion components in spaday rendering a bank account opening page](https://raw.githubusercontent.com/1kbgz/spaday-lion/main/docs/img/preview.webp)](./spaday_lion/example.py)
+[![Preview of Lion components in spaday rendering a bank account opening page](https://raw.githubusercontent.com/1kbgz/spaday-lion/main/docs/img/preview.webp)](https://1kbgz.github.io/spaday-lion/lite/)
 
 ## Overview
 
@@ -28,19 +28,29 @@ including the attributes its form and localization mixins contribute, so props, 
 checked when you author the tree. Installing the package does not inject assets; select it with
 `packages=["lion"]` or pass the exported `package` descriptor.
 
-## Run the local example
+## Browser examples
+
+- [Open the standard app](https://1kbgz.github.io/spaday-lion/lite/) ([source](spaday_lion/example.py)).
+- [Open the complete component gallery](https://1kbgz.github.io/spaday-lion/lite/?example=gallery) ([source](spaday_lion/gallery.py)).
+
+Both run Python locally through Pyodide; no install or server is required.
+
+## Run examples locally
 
 ```bash
 python -m pip install -e ".[examples]"
 python -m spaday_lion.example
+python -m spaday_lion.gallery
 ```
 
-Open `http://127.0.0.1:8025` for the [account opening page](spaday_lion/example.py): a `lion-form` of
-input, email, IBAN, amount, datepicker, rich select, combobox, radio and checkbox groups, range, stepper,
-switch and text area whose `serializedValue` is posted to Python as one request and confirmed in a dialog,
-two-way bindings driving a live preview, a review queue streamed from Python with approvals, tabs, an
-accordion, a collapsible and a tooltip. Lion is white-label, so the page styles the elements from spaday's
-palette, and its dark switch flips them with the shell.
+Open `http://127.0.0.1:8025` for the standard account-opening app or `http://127.0.0.1:8026` for the
+component gallery. The standard app includes a complete `lion-form`, two-way bindings, an endpoint-backed
+submission flow, a review queue streamed from Python, overlays, navigation, and shared dark-theme state.
+The gallery includes every generated Lion component and a highlighted Python snippet for each component
+family.
+
+Both pass the local package descriptor directly, so they do not install or resolve the integration from
+GitHub.
 
 ## Theming
 
