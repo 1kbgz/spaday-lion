@@ -3,6 +3,30 @@ import { expect, test } from "@playwright/test";
 
 const built = fs.existsSync("dist/lite/index.html");
 
+async function renderedComponentTags(page, prefix, structuralTags = []) {
+  return page.locator("body").evaluate(
+    (body, { prefix, structuralTags }) => {
+      const components = [...body.querySelectorAll("*")].filter((element) =>
+        element.localName.startsWith(prefix),
+      );
+      const tags = [...new Set(components.map((element) => element.localName))];
+      const structural = new Set(structuralTags);
+      const unrendered = tags.filter(
+        (tag) =>
+          !structural.has(tag) &&
+          !components
+            .filter((element) => element.localName === tag)
+            .some((element) => {
+              const bounds = element.getBoundingClientRect();
+              return bounds.width > 0 && bounds.height > 0;
+            }),
+      );
+      return { count: tags.length, unrendered };
+    },
+    { prefix, structuralTags },
+  );
+}
+
 async function waitForPython(page) {
   await page.waitForFunction(
     () =>
@@ -81,6 +105,21 @@ test("runs the component gallery in Pyodide", async ({ page }) => {
   await expect(page.locator(".hero h1")).toHaveText("Component gallery");
   expect(await page.locator(".gallery-card").count()).toBeGreaterThan(10);
   await expect(page.locator("lion-input-amount-dropdown")).toBeVisible();
+  const rendered = await renderedComponentTags(page, "lion-", ["lion-dialog"]);
+  expect(rendered.count).toBe(47);
+  expect(rendered.unrendered).toEqual([]);
+  await expect(
+    page.locator("lion-selected-file-list", { hasText: "supplier-review.pdf" }),
+  ).toBeVisible();
+  await expect(
+    page.locator("lion-validation-feedback", { hasText: "Reference is ready" }),
+  ).toBeVisible();
+  await page.getByRole("button", { name: "Open dialog" }).click();
+  await expect(page.locator("#gallery-dialog")).toHaveJSProperty(
+    "opened",
+    true,
+  );
+  await expect(page.locator("#gallery-dialog .overlay-card")).toBeVisible();
   await expect(page.locator(".token-keyword").first()).toHaveText("from");
   await expectNoHorizontalOverflow(page);
   expect(errors).toEqual([]);

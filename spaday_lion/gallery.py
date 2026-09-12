@@ -153,7 +153,7 @@ text_inputs = _section(
             lion.LionInput(label="Account name", help_text="Shown on statements", placeholder="Everyday account"),
             lion.LionTextarea(label="Notes", rows=3, placeholder="Optional context"),
             lion.LionField(label="Reference").child_in("input", element("input", value="OPS-204")),
-            lion.LionValidationFeedback(),
+            lion.LionValidationFeedback(feedbackData=[{"message": "Reference is ready", "type": "success"}]),
             class_="form-preview",
         ),
     ),
@@ -204,7 +204,15 @@ text_inputs = _section(
                 multiple=True,
                 enable_drop_zone=True,
             ),
-            lion.LionSelectedFileList(multiple=True),
+            lion.LionSelectedFileList(
+                fileList=[
+                    {
+                        "systemFile": {"name": "supplier-review.pdf", "size": 184320, "type": "application/pdf"},
+                        "status": "SUCCESS",
+                    }
+                ],
+                multiple=True,
+            ),
             class_="form-preview",
         ),
     ),
@@ -388,7 +396,17 @@ selection = _section(
                 label="Country",
                 name="country",
             ),
-            element("div", lion.LionListbox(), lion.LionSelectInvoker().text("Choose"), class_="primitive-row"),
+            element(
+                "div",
+                lion.LionListbox(
+                    lion.LionOption(choice_value="operations", checked=True).text("Operations"),
+                    lion.LionOption(choice_value="finance").text("Finance"),
+                    label="Team",
+                    name="team",
+                ),
+                lion.LionSelectInvoker().text("Choose"),
+                class_="primitive-row",
+            ),
             class_="form-preview",
         ),
     ),
