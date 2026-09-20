@@ -9,7 +9,12 @@ hidden: true
 
 ```
 
-# spaday-lion
+<a href="https://github.com/1kbgz/spaday-lion">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/1kbgz/spaday-lion/raw/main/docs/img/logo-dark.webp?raw=true">
+    <img alt="spaday-lion logo, a lion face inside a browser window" src="https://github.com/1kbgz/spaday-lion/raw/main/docs/img/logo-light.webp?raw=true" width="1200">
+  </picture>
+</a>
 
 Typed [Lion](https://lion.js.org) components and browser assets for [spaday](https://github.com/1kbgz/spaday).
 
