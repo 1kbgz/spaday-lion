@@ -1,0 +1,24 @@
+spaday_lion.design
+==================
+
+.. py:module:: spaday_lion.design
+
+.. autoapi-nested-parse::
+
+   How Lion renders spaday's generic controls (:mod:`spaday.ui`).
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   spaday_lion.design.DESIGN
+
+
+Module Contents
+---------------
+
+.. py:data:: DESIGN
+

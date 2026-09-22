@@ -1,0 +1,40 @@
+test_design
+===========
+
+.. py:module:: test_design
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   test_design._props
+   test_design._find
+   test_design.test_find_walks_all_slots_and_reports_missing_tags
+   test_design.test_the_package_publishes_its_design
+   test_design.test_lion_fields_use_serialized_value_and_native_change_event
+   test_design.test_lion_choices_and_slider_preserve_typed_values
+   test_design.test_lion_dialog_maps_opened_state
+   test_design.test_the_conformance_page_only_falls_back_for_alert
+
+
+Module Contents
+---------------
+
+.. py:function:: _props(node: dict) -> dict
+
+.. py:function:: _find(node: dict, tag: str) -> dict
+
+.. py:function:: test_find_walks_all_slots_and_reports_missing_tags()
+
+.. py:function:: test_the_package_publishes_its_design()
+
+.. py:function:: test_lion_fields_use_serialized_value_and_native_change_event()
+
+.. py:function:: test_lion_choices_and_slider_preserve_typed_values()
+
+.. py:function:: test_lion_dialog_maps_opened_state()
+
+.. py:function:: test_the_conformance_page_only_falls_back_for_alert()
+

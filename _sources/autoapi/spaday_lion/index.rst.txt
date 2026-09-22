@@ -11,6 +11,7 @@ Submodules
    :maxdepth: 1
 
    /autoapi/spaday_lion/components/index
+   /autoapi/spaday_lion/design/index
    /autoapi/spaday_lion/example/index
    /autoapi/spaday_lion/gallery/index
 
@@ -20,6 +21,7 @@ Attributes
 
 .. autoapisummary::
 
+   spaday_lion.DESIGN
    spaday_lion.package
    spaday_lion.TOKENS
 
@@ -916,6 +918,8 @@ Package Contents
 
    .. py:attribute:: schema
 
+
+.. py:data:: DESIGN
 
 .. py:data:: package
 

@@ -44,6 +44,24 @@ including the attributes its form and localization mixins contribute, so props, 
 checked when you author the tree. Installing the package does not inject assets; select it with
 `packages=["lion"]` or pass the exported `package` descriptor.
 
+## Generic controls
+
+Select the `lion` design to render spaday's generic controls as Lion elements:
+
+```python
+from spaday import Button, Column, TextInput
+from spaday.backends.starlette import serve
+
+page = Column(
+    TextInput(label="Name").bind("value", "name", mode="two-way"),
+    Button(label="Save", intent="primary"),
+)
+app = serve(page, packages=["lion"], design="lion", store={"name": ""})
+```
+
+Lion realizes 12 of the 13 generic controls. `Alert` uses spaday's marked native fallback because
+Lion does not provide a static alert component.
+
 ## Browser examples
 
 - [Open the standard app](https://1kbgz.github.io/spaday-lion/lite/) ([source](spaday_lion/example.py)).

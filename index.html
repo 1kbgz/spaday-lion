@@ -202,10 +202,12 @@
 <li class="toctree-l2"><a class="reference internal" href="autoapi/test_all/index.html">test_all</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="autoapi/spaday_lion/index.html">spaday_lion</a><input aria-label="Toggle navigation of spaday_lion" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="autoapi/spaday_lion/components/index.html">spaday_lion.components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/spaday_lion/design/index.html">spaday_lion.design</a></li>
 <li class="toctree-l3"><a class="reference internal" href="autoapi/spaday_lion/example/index.html">spaday_lion.example</a></li>
 <li class="toctree-l3"><a class="reference internal" href="autoapi/spaday_lion/gallery/index.html">spaday_lion.gallery</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="autoapi/test_design/index.html">test_design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autoapi/integration/index.html">integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autoapi/test_example/index.html">test_example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autoapi/test_gallery/index.html">test_gallery</a></li>
@@ -281,6 +283,22 @@
 including the attributes its form and localization mixins contribute, so props, events and slots are
 checked when you author the tree. Installing the package does not inject assets; select it with
 <code class="docutils literal notranslate"><span class="pre">packages=[&quot;lion&quot;]</span></code> or pass the exported <code class="docutils literal notranslate"><span class="pre">package</span></code> descriptor.</p>
+</section>
+<section id="generic-controls">
+<h1>Generic controls<a class="headerlink" href="#generic-controls" title="Link to this heading">¶</a></h1>
+<p>Select the <code class="docutils literal notranslate"><span class="pre">lion</span></code> design to render spaday’s generic controls as Lion elements:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spaday</span><span class="w"> </span><span class="kn">import</span> <span class="n">Button</span><span class="p">,</span> <span class="n">Column</span><span class="p">,</span> <span class="n">TextInput</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">spaday.backends.starlette</span><span class="w"> </span><span class="kn">import</span> <span class="n">serve</span>
+
+<span class="n">page</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span>
+    <span class="n">TextInput</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">"Name"</span><span class="p">)</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">"value"</span><span class="p">,</span> <span class="s2">"name"</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"two-way"</span><span class="p">),</span>
+    <span class="n">Button</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">"Save"</span><span class="p">,</span> <span class="n">intent</span><span class="o">=</span><span class="s2">"primary"</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">serve</span><span class="p">(</span><span class="n">page</span><span class="p">,</span> <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s2">"lion"</span><span class="p">],</span> <span class="n">design</span><span class="o">=</span><span class="s2">"lion"</span><span class="p">,</span> <span class="n">store</span><span class="o">=</span><span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">""</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>Lion realizes 12 of the 13 generic controls. <code class="docutils literal notranslate"><span class="pre">Alert</span></code> uses spaday’s marked native fallback because
+Lion does not provide a static alert component.</p>
 </section>
 <section id="browser-examples">
 <h1>Browser examples<a class="headerlink" href="#browser-examples" title="Link to this heading">¶</a></h1>
