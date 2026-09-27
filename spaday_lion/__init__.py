@@ -29,11 +29,20 @@ package = ComponentPackage(
     design=DESIGN,
 )
 
-#: Lion is white-label, but its form controls consume ``--disabled-text-color``. The adapter token
-#: passes the shell's muted color to that hook without presenting a larger theme API Lion does not
-#: implement.
+#: Every CSS custom property consumed by Lion's registered production components. Lion is
+#: white-label, so only disabled text belongs to the shell palette; tooltip and drawer tokens expose
+#: the layout controls provided by Lion itself.
 TOKENS = {
-    "spa_lion_disabled_text": Token("--spa-lion-disabled-text", "disabled Lion form-control text", fallback="--spa-muted"),
+    "disabled_text_color": Token("--disabled-text-color", "disabled form-control text", fallback="--spa-muted"),
+    "tooltip_arrow_width": Token("--tooltip-arrow-width", "tooltip arrow width"),
+    "tooltip_arrow_height": Token("--tooltip-arrow-height", "tooltip arrow height"),
+    "min_width": Token("--min-width", "drawer minimum width"),
+    "max_width": Token("--max-width", "drawer maximum width"),
+    "min_height": Token("--min-height", "drawer minimum height"),
+    "max_height": Token("--max-height", "drawer maximum height"),
+    "start_width": Token("--start-width", "drawer initial width"),
+    "start_height": Token("--start-height", "drawer initial height"),
+    "transition_property": Token("--transition-property", "drawer animated dimension"),
 }
 
 __all__ = [*_component_names, "DESIGN", "TOKENS", "package"]  # noqa: PLE0604

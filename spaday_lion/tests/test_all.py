@@ -1,10 +1,11 @@
 import ast
+import re
 from pathlib import Path
 
 from spaday import Token, element, generate
 from spaday.bootstrap import bootstrap
 
-from spaday_lion import TOKENS, LionButton, LionInput, package
+from spaday_lion import TOKENS, LionButton, LionDrawer, LionInput, LionTooltip, package
 
 ROOT = Path(__file__).parent.parent
 
@@ -46,11 +47,44 @@ def test_published_imports_are_served():
         assert target.is_dir() if path.endswith("/") else target.is_file(), f"{specifier} maps to {path}, which the build did not produce"
 
 
-def test_tokens_expose_lions_functional_styling_hook():
-    token = TOKENS["spa_lion_disabled_text"]
-    assert isinstance(token, Token)
-    assert token.property == "--spa-lion-disabled-text"
-    assert token.fallback == "--spa-muted"
+def test_tokens_expose_lions_production_custom_properties():
+    expected = {
+        "disabled_text_color": ("--disabled-text-color", "--spa-muted"),
+        "tooltip_arrow_width": ("--tooltip-arrow-width", None),
+        "tooltip_arrow_height": ("--tooltip-arrow-height", None),
+        "min_width": ("--min-width", None),
+        "max_width": ("--max-width", None),
+        "min_height": ("--min-height", None),
+        "max_height": ("--max-height", None),
+        "start_width": ("--start-width", None),
+        "start_height": ("--start-height", None),
+        "transition_property": ("--transition-property", None),
+    }
+    assert {name: (token.property, token.fallback) for name, token in TOKENS.items()} == expected
+    assert all(isinstance(token, Token) for token in TOKENS.values())
+
+
+def test_tokens_cover_every_custom_property_consumed_by_registered_lion_components():
+    components = ROOT.parent / "js" / "node_modules" / "@lion" / "ui" / "components"
+    assert components.is_dir(), "run `make develop-js` before the Python suite"
+    consumed = set()
+    for path in components.rglob("*.js"):
+        relative = path.relative_to(components)
+        if {"docs", "helpers", "test", "test-helpers"} & set(relative.parts):
+            continue
+        consumed.update(re.findall(r"var\((--[\w-]+)", path.read_text(encoding="utf-8")))
+    assert {token.property for token in TOKENS.values()} == consumed
+
+
+def test_token_kwargs_serialize_to_the_native_lion_properties():
+    components = {
+        "disabled_text_color": LionInput(),
+        "tooltip_arrow_width": LionTooltip(),
+        "tooltip_arrow_height": LionTooltip(),
+        **{name: LionDrawer() for name in TOKENS if name not in {"disabled_text_color", "tooltip_arrow_width", "tooltip_arrow_height"}},
+    }
+    for name, component in components.items():
+        assert component.css(**{name: "token-value"}).to_node()["props"]["style"] == {"Str": f"{TOKENS[name].property}: token-value"}
 
 
 def test_generated_catalog_is_current():
