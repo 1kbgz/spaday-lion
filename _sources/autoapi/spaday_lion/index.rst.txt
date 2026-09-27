@@ -924,5 +924,4 @@ Package Contents
 .. py:data:: package
 
 .. py:data:: TOKENS
-   :type:  dict[str, tuple[str, str]]
 
