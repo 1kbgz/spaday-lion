@@ -1,4 +1,5 @@
 import { bundle } from "./tools/bundle.mjs";
+import { bundle_css } from "./tools/css.mjs";
 import { node_modules_external } from "./tools/externals.mjs";
 import { vendor } from "./tools/vendor.mjs";
 
@@ -76,6 +77,7 @@ async function build() {
     force: true,
   });
 
+  await bundle_css();
   await Promise.all(BUNDLES.map(bundle)).catch(() => process.exit(1));
 
   // the import map, relative to the served root: read by the Python package, and inlined into the

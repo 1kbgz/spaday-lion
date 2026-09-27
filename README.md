@@ -77,9 +77,18 @@ GitHub.
 
 ## Theming
 
-Lion is white-label: its elements ship functional styles only, with no theme and no design tokens,
-so `TOKENS` is empty and there is nothing to map onto spaday's `--spa-*` palette. Style them with
-ordinary CSS, reading the shell's tokens where they fit:
+Lion is white-label: its elements ship functional styles instead of a palette. Its form controls do
+consume `--disabled-text-color`, so `spaday-lion` passes `--spa-muted` to that hook through
+`--spa-lion-disabled-text`:
+
+```python
+from spaday import App
+
+App(...).css(spa_lion_disabled_text="#64748b")
+```
+
+`spaday_lion.TOKENS` describes that adapter token. Style the rest of Lion with ordinary CSS, reading
+the shell's tokens where they fit:
 
 ```css
 lion-button { background: var(--spa-accent); border: 1px solid var(--spa-border); }

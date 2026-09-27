@@ -1,7 +1,7 @@
 import ast
 from pathlib import Path
 
-from spaday import element, generate
+from spaday import Token, element, generate
 from spaday.bootstrap import bootstrap
 
 from spaday_lion import TOKENS, LionButton, LionInput, package
@@ -32,6 +32,7 @@ def test_inherited_attributes_reach_the_catalog():
 
 def test_package_drives_bootstrap_asset_urls():
     html = bootstrap(packages=[package])
+    assert 'href="/components/lion/css/index.css"' in html
     assert 'src="/components/lion/cdn/index.js"' in html
     assert '"@lion/ui/": "/components/lion/vendor/@lion/ui/exports/"' in html
     # the bundle's own imports resolve through the map, so it must come first
@@ -45,8 +46,11 @@ def test_published_imports_are_served():
         assert target.is_dir() if path.endswith("/") else target.is_file(), f"{specifier} maps to {path}, which the build did not produce"
 
 
-def test_tokens_are_deliberately_empty():
-    assert TOKENS == {}  # Lion is white-label: no theme, no design tokens to map
+def test_tokens_expose_lions_functional_styling_hook():
+    token = TOKENS["spa_lion_disabled_text"]
+    assert isinstance(token, Token)
+    assert token.property == "--spa-lion-disabled-text"
+    assert token.fallback == "--spa-muted"
 
 
 def test_generated_catalog_is_current():
