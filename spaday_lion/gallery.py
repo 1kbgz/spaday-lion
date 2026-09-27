@@ -339,7 +339,8 @@ selection = _section(
     ),
     _demo(
         "Native select",
-        "Wrap a platform select while retaining Lion's field and validation behavior.",
+        "Wrap a platform select while retaining Lion's field and validation behavior. Repeated "
+        "options need Each(..., direct=True) because native selects require direct option children.",
         _snippet(
             "LionSelect",
             """
