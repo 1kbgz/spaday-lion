@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from spaday import ComponentPackage
+from spaday import ComponentPackage, Token
 
 from . import components as _components
 from .components import *
@@ -22,21 +22,18 @@ _VERSIONS = _EXTENSION / "versions.json"
 package = ComponentPackage(
     name="lion",
     assets_dir=_EXTENSION,
-    assets=(("js", "cdn/index.js"),),
+    assets=(("css", "css/index.css"), ("js", "cdn/index.js")),
     components=tuple(getattr(_components, name) for name in _component_names),
     imports=tuple(json.loads(_IMPORTS.read_text(encoding="utf-8")).items()) if _IMPORTS.exists() else (),
     provides=json.loads(_VERSIONS.read_text(encoding="utf-8")) if _VERSIONS.exists() else {},
     design=DESIGN,
 )
 
-#: ``css()`` kwarg → (CSS custom property, what it controls), in the shape of
-#: :data:`spaday.theme.SHELL_TOKENS`.
-#:
-#: Deliberately empty. Lion is a white-label library: its elements ship functional styles only, with
-#: no theme and no design tokens, so there is nothing to map onto spaday's ``--spa-*`` palette. Style
-#: them with ordinary CSS, reading the shell's tokens where they fit::
-#:
-#:     lion-button { background: var(--spa-accent); border: 1px solid var(--spa-border); }
-TOKENS: dict[str, tuple[str, str]] = {}
+#: Lion is white-label, but its form controls consume ``--disabled-text-color``. The adapter token
+#: passes the shell's muted color to that hook without presenting a larger theme API Lion does not
+#: implement.
+TOKENS = {
+    "spa_lion_disabled_text": Token("--spa-lion-disabled-text", "disabled Lion form-control text", fallback="--spa-muted"),
+}
 
 __all__ = [*_component_names, "DESIGN", "TOKENS", "package"]  # noqa: PLE0604

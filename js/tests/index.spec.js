@@ -20,6 +20,21 @@ test("registers and renders the Lion catalog", async ({ page }) => {
   expect(errors).toEqual([]);
 });
 
+test("passes the Spaday muted token to Lion's disabled-text hook", async ({
+  page,
+}) => {
+  await page.goto("/dist/index.html");
+  const color = await page.evaluate(() => {
+    const app = document.createElement("spa-app");
+    app.style.setProperty("--spa-lion-disabled-text", "rgb(12, 34, 56)");
+    document.body.append(app);
+    return getComputedStyle(app)
+      .getPropertyValue("--disabled-text-color")
+      .trim();
+  });
+  expect(color).toBe("rgb(12, 34, 56)");
+});
+
 test("survives an application that already registered a Lion element", async ({
   page,
 }) => {
