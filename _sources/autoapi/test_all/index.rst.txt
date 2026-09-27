@@ -22,7 +22,9 @@ Functions
    test_all.test_inherited_attributes_reach_the_catalog
    test_all.test_package_drives_bootstrap_asset_urls
    test_all.test_published_imports_are_served
-   test_all.test_tokens_expose_lions_functional_styling_hook
+   test_all.test_tokens_expose_lions_production_custom_properties
+   test_all.test_tokens_cover_every_custom_property_consumed_by_registered_lion_components
+   test_all.test_token_kwargs_serialize_to_the_native_lion_properties
    test_all.test_generated_catalog_is_current
 
 
@@ -44,7 +46,11 @@ Module Contents
 
 .. py:function:: test_published_imports_are_served()
 
-.. py:function:: test_tokens_expose_lions_functional_styling_hook()
+.. py:function:: test_tokens_expose_lions_production_custom_properties()
+
+.. py:function:: test_tokens_cover_every_custom_property_consumed_by_registered_lion_components()
+
+.. py:function:: test_token_kwargs_serialize_to_the_native_lion_properties()
 
 .. py:function:: test_generated_catalog_is_current()
 

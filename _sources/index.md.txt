@@ -88,18 +88,24 @@ GitHub.
 
 ## Theming
 
-Lion is white-label: its elements ship functional styles instead of a palette. Its form controls do
-consume `--disabled-text-color`, so `spaday-lion` passes `--spa-muted` to that hook through
-`--spa-lion-disabled-text`:
+Lion is white-label: its elements ship functional styles instead of a palette. Disabled form-control
+text follows `--spa-muted` by default. Override Lion's native custom property on an app or one
+component when it needs a different value:
 
 ```python
 from spaday import App
+from spaday_lion import LionDrawer, LionInput, LionTooltip
 
-App(...).css(spa_lion_disabled_text="#64748b")
+App(
+    LionInput(label="Account").css(disabled_text_color="#64748b"),
+    LionTooltip().css(tooltip_arrow_width="18px", tooltip_arrow_height="11px"),
+    LionDrawer().css(min_width="16rem", max_width="32rem", transition_property="width"),
+)
 ```
 
-`spaday_lion.TOKENS` describes that adapter token. Style the rest of Lion with ordinary CSS, reading
-the shell's tokens where they fit:
+`spaday_lion.TOKENS` lists all ten custom properties consumed by Lion's registered production
+components: disabled text, tooltip arrow dimensions, and drawer size and transition controls. Style
+the rest of Lion with ordinary CSS, reading the shell's tokens where they fit:
 
 ```css
 lion-button { background: var(--spa-accent); border: 1px solid var(--spa-border); }
