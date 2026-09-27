@@ -20,19 +20,86 @@ test("registers and renders the Lion catalog", async ({ page }) => {
   expect(errors).toEqual([]);
 });
 
-test("passes the Spaday muted token to Lion's disabled-text hook", async ({
+test("passes the Spaday muted token to disabled Lion form controls", async ({
   page,
 }) => {
   await page.goto("/dist/index.html");
-  const color = await page.evaluate(() => {
+  const color = await page.evaluate(async () => {
     const app = document.createElement("spa-app");
-    app.style.setProperty("--spa-lion-disabled-text", "rgb(12, 34, 56)");
+    app.style.setProperty("--spa-muted", "rgb(12, 34, 56)");
+    const input = document.createElement("lion-input");
+    input.label = "Disabled";
+    input.disabled = true;
+    app.append(input);
     document.body.append(app);
-    return getComputedStyle(app)
-      .getPropertyValue("--disabled-text-color")
-      .trim();
+    await input.updateComplete;
+    return getComputedStyle(input.querySelector("label")).color;
   });
   expect(color).toBe("rgb(12, 34, 56)");
+});
+
+test("applies tooltip arrow tokens to the rendered arrow", async ({ page }) => {
+  await page.goto("/dist/index.html");
+  const dimensions = await page.evaluate(async () => {
+    const tooltip = document.createElement("lion-tooltip");
+    tooltip.style.setProperty("--tooltip-arrow-width", "18px");
+    tooltip.style.setProperty("--tooltip-arrow-height", "11px");
+    document.body.append(tooltip);
+    await tooltip.updateComplete;
+    const style = getComputedStyle(tooltip.shadowRoot.querySelector(".arrow"));
+    return { width: style.width, height: style.height };
+  });
+  expect(dimensions).toEqual({ width: "18px", height: "11px" });
+});
+
+test("applies drawer size and transition tokens to its container", async ({
+  page,
+}) => {
+  await page.goto("/dist/index.html");
+  const values = await page.evaluate(async () => {
+    const drawer = document.createElement("lion-drawer");
+    const tokens = {
+      "--min-width": "80px",
+      "--max-width": "360px",
+      "--min-height": "40px",
+      "--max-height": "240px",
+      "--start-width": "144px",
+      "--start-height": "120px",
+      "--transition-property": "height",
+    };
+    for (const [name, value] of Object.entries(tokens)) {
+      drawer.style.setProperty(name, value);
+    }
+    document.body.append(drawer);
+    await drawer.updateComplete;
+    const host = getComputedStyle(drawer);
+    const style = getComputedStyle(
+      drawer.shadowRoot.querySelector(".container"),
+    );
+    return {
+      width: style.width,
+      height: style.height,
+      minWidth: style.minWidth,
+      maxWidth: style.maxWidth,
+      minHeight: style.minHeight,
+      maxHeight: style.maxHeight,
+      transitionProperty: style.transitionProperty,
+      startWidth: host.getPropertyValue("--start-width").trim(),
+      startHeight: host.getPropertyValue("--start-height").trim(),
+    };
+  });
+  expect(values).toEqual({
+    // A closed drawer uses its configured minimum; start width remains available for its CSS state.
+    width: "80px",
+    height: "120px",
+    minWidth: "80px",
+    maxWidth: "360px",
+    minHeight: "40px",
+    maxHeight: "240px",
+    transitionProperty: "height",
+    startWidth: "144px",
+    startHeight: "120px",
+  });
 });
 
 test("survives an application that already registered a Lion element", async ({

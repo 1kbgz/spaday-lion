@@ -1,7 +1,3 @@
-:root,
 spa-app {
-  --disabled-text-color: var(
-    --spa-lion-disabled-text,
-    var(--spa-muted, #767676)
-  );
+  --disabled-text-color: var(--spa-muted, #767676);
 }
