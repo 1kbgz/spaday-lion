@@ -28,6 +28,7 @@ def test_catalog_is_the_elements_lion_registers():
 
 def test_inherited_attributes_reach_the_catalog():
     """Lion's manifest names its mixins by package specifier, so the collector resolves them."""
+    assert LionInput.schema is not None
     assert {"label", "help-text", "name", "disabled"} <= {prop.name for prop in LionInput.schema.props}
 
 
