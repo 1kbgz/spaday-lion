@@ -53,6 +53,7 @@ develop = [
     "hatchling",
     "httpx",
     "mdformat",
+    "mdformat-frontmatter",
     "mdformat-tables>=1",
     "pydantic>=2",
     "pytest",
@@ -102,9 +103,13 @@ replace = '"version": "{new_version}"'
 [tool.coverage.run]
 branch = true
 omit = [
+<<<<<<< before updating
     "spaday_lion/components.py",
     "spaday_lion/example.py",
     "spaday_lion/tests/integration.py",
+=======
+    "spaday_lion/tests/integration/*",
+>>>>>>> after updating
 ]
 
 [tool.coverage.report]
