@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@lion/ui':
-        specifier: 0.25.0
-        version: 0.25.0
+        specifier: 0.22.0
+        version: 0.22.0
     devDependencies:
       '@playwright/test':
         specifier: ^1.64.1
@@ -204,8 +204,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@lion/ui@0.25.0':
-    resolution: {integrity: sha512-XVNxnSvcQEK5GhKZjgx8uzSdL65tdBEtsh5q3Ep66cyNsOOpnQztjC+dlDso4qAu1bRzftD3jpbe/8W4YzRloA==}
+  '@lion/ui@0.22.0':
+    resolution: {integrity: sha512-n2tkygzFZlh2bx0ikYltQJqTej2aNMXgH5JiutYcnViVQErFzEsgqysUYoHUwSrw6s6ySIsFdoaP2gHLSUQlRQ==}
 
   '@lit-labs/ssr-dom-shim@1.6.0':
     resolution: {integrity: sha512-VHb0ALPMTlgKjM6yIxxoQNnpKyUKLD04VzeQdsiXkMqkvYlAHxq9glGLmgbb889/1GsohSOAjvQYoiBppXFqrQ==}
@@ -643,6 +643,10 @@ packages:
   available-typed-arrays@1.0.7:
     resolution: {integrity: sha512-wvUjBtSGN7+7SjNpq/9M2Tg350UZD3q62IFZLbRAR1bSMlCo1ZaeW+BJ+D090e4hIIZLBcTDWe4Mh4jvUDajzQ==}
     engines: {node: '>= 0.4'}
+
+  awesome-phonenumber@7.8.0:
+    resolution: {integrity: sha512-zw23nvKt6gLGgCrKZ5Z7ZK0lm3k39/uZTw+cWp5tpiXVfEFSt9AEVFDzSycws76G64xOMrIVp2upYvJxwRgzvw==}
+    engines: {node: '>=18'}
 
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
@@ -1660,13 +1664,14 @@ snapshots:
   '@esbuild/win32-x64@0.28.2':
     optional: true
 
-  '@lion/ui@0.25.0':
+  '@lion/ui@0.22.0':
     dependencies:
       '@bundled-es-modules/message-format': 6.2.4
       '@open-wc/dedupe-mixin': 2.0.1
       '@open-wc/scoped-elements': 3.0.10
       '@popperjs/core': 2.11.8
       autosize: 6.0.1
+      awesome-phonenumber: 7.8.0
       ibantools: 4.5.4
       lit: 3.3.3
       singleton-manager: 1.8.0
@@ -1917,6 +1922,8 @@ snapshots:
   available-typed-arrays@1.0.7:
     dependencies:
       possible-typed-array-names: 1.1.0
+
+  awesome-phonenumber@7.8.0: {}
 
   balanced-match@1.0.2: {}
 

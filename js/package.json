@@ -42,7 +42,7 @@
     "watch": "nodemon --watch src -e ts,css,html --exec \"pnpm build:debug\""
   },
   "dependencies": {
-    "@lion/ui": "0.25.0"
+    "@lion/ui": "0.22.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.64.1",
