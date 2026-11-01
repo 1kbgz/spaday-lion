@@ -1,1 +1,1 @@
-import{a as r}from"../../../../../../chunks/chunk-54VTKJ6B.js";export{r as arrowLeft};
+import{a as r}from"../../../../../../chunks/chunk-4WZMSLWF.js";export{r as arrowLeft};

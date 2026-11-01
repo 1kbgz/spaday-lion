@@ -1,4 +1,4 @@
-import{a as r}from"../../../../../../chunks/chunk-TCJO2LYM.js";import"../../../../../../chunks/chunk-KVEQ5QLL.js";import"../../../../../../chunks/chunk-JK7PRD3U.js";import"../../../../../../chunks/chunk-G7OXZUGX.js";import"../../../../../../chunks/chunk-7ONKQLO6.js";import"../../../../../../chunks/chunk-GNR73WXY.js";import{b as o}from"../../../../../../chunks/chunk-TIEK7LWH.js";import"../../../../../../chunks/chunk-2FELQFK7.js";var b=class extends r{static properties={variant:{type:String,reflect:!0}};static styles=[...super.styles,o`
+import{a as r}from"../../../../../../chunks/chunk-GJ2YTEX2.js";import"../../../../../../chunks/chunk-X44RUMV6.js";import"../../../../../../chunks/chunk-JK7PRD3U.js";import"../../../../../../chunks/chunk-G7OXZUGX.js";import"../../../../../../chunks/chunk-7ONKQLO6.js";import"../../../../../../chunks/chunk-GNR73WXY.js";import{b as o}from"../../../../../../chunks/chunk-TIEK7LWH.js";import"../../../../../../chunks/chunk-2FELQFK7.js";var b=class extends r{static properties={variant:{type:String,reflect:!0}};static styles=[...super.styles,o`
       :host {
         --bs-border-radius: 0.375rem;
         --bs-border-width: 1px;

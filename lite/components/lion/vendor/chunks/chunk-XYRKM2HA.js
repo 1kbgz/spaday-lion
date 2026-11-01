@@ -1,1 +1,0 @@
-import{a as r}from"./chunk-KAGY5GXH.js";import{b as o}from"./chunk-DSM4IEUY.js";var e=class extends r{constructor(){super(),this.name="Compatible from App",this.blocker.innerText=`Blocker for ${this.name}`}blockingBody(){this.block()}unBlockingBody(){this.unBlock()}},s=new e;o.set("overlays::overlays::1.x",s);o.set("overlays::overlays::2.x",s);

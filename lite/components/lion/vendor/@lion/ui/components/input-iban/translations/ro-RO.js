@@ -1,1 +1,1 @@
-import{a as o}from"../../../../../chunks/chunk-YSGPLQLS.js";var t={...o};export{t as default};
+import{a as o}from"../../../../../chunks/chunk-KCTO7PUU.js";var t={...o};export{t as default};

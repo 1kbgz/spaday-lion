@@ -1,1 +1,1 @@
-import{a as r}from"../../../../../chunks/chunk-X2HDL6HC.js";var t={...r};export{t as default};
+import{a as r}from"../../../../../chunks/chunk-OQHOJ5KE.js";var t={...r};export{t as default};

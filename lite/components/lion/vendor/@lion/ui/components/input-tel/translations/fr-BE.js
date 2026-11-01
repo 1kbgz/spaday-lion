@@ -1,1 +1,1 @@
-import{a as r}from"../../../../../chunks/chunk-X2OV5VPM.js";var o={...r};export{o as default};
+import{a as r}from"../../../../../chunks/chunk-QRWDXAK6.js";var o={...r};export{o as default};
